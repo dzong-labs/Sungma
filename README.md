@@ -1,4 +1,4 @@
-![Sungma](https://raw.githubusercontent.com/marklauter/Sungma/main/assets/logo/sungma-sml.png "Sungma")
+![Sungma](https://raw.githubusercontent.com/dzong-labs/Sungma/main/assets/logo/sungma-sml.png "Sungma")
 
 # Sungma
 
