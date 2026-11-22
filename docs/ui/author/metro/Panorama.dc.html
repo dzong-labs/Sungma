@@ -23,13 +23,13 @@ body{margin:0}
 .search input::-webkit-search-cancel-button{filter:invert(0.8)}
 </style>
 </helmet>
-<div style="width: 1440px; height: 1400px; box-sizing: border-box; padding: 40px 80px; background: #141414; color: #D4D4D4; font-family: 'Segoe UI', 'Open Sans', sans-serif; font-size: 15px; line-height: 1.5; display: flex; flex-direction: column; gap: 16px">
+<div style="width: 1440px; height: 1520px; box-sizing: border-box; padding: 40px 80px; background: #141414; color: #D4D4D4; font-family: 'Segoe UI', 'Open Sans', sans-serif; font-size: 15px; line-height: 1.5; display: flex; flex-direction: column; gap: 16px">
 <span style="color: #9D9D9D">the strip, with the window over it</span>
-<div style="position: relative; width: 1280px; height: 172px; overflow: hidden; background: #1E1E1E">
-<div style="position: absolute; left: 0; top: 0; width: 6720px; height: 900px; transform: scale(0.190476); transform-origin: 0 0">
-<dc-import name="Strip" hint-size="6720px,900px"></dc-import>
+<div style="position: relative; width: 1280px; height: 245px; overflow: hidden; background: #1E1E1E">
+<div style="position: absolute; left: 0; top: 0; width: 7840px; height: 1500px; transform: scale(0.163265); transform-origin: 0 0">
+<dc-import name="Strip" hint-size="7840px,1500px"></dc-import>
 </div>
-<div aria-hidden="true" style="position: absolute; top: 0; height: 168px; width: 240px; border: 2px solid #D4D4D4; left: {{frameLeft}}px; transition: left 400ms ease"></div>
+<div aria-hidden="true" style="position: absolute; top: 0; height: 241px; width: 205px; border: 2px solid #D4D4D4; left: {{frameLeft}}px; transition: left 400ms ease"></div>
 </div>
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 24px">
 <span style="color: #9D9D9D">the window</span>
@@ -57,8 +57,10 @@ body{margin:0}
 <button type="button" aria-haspopup="menu" aria-expanded="false" style="min-height: 44px; padding: 0; background: transparent; color: #D4D4D4; border: 0; font: inherit">mark</button>
 </span>
 </header>
-<div style="width: 6720px; transform: translateX(-{{offset}}px); transition: transform 400ms ease">
-<dc-import name="Strip" hint-size="6720px,900px"></dc-import>
+<div style="height: 924px; overflow-x: hidden; overflow-y: auto">
+<div style="width: 7840px; transform: translateX(-{{offset}}px); transition: transform 400ms ease">
+<dc-import name="Strip" hint-size="7840px,1500px"></dc-import>
+</div>
 </div>
 <sc-if value="{{hasPrev}}" hint-placeholder-val="{{ false }}">
 <button type="button" class="edge" onClick="{{back}}" aria-label="{{prevLabel}}" style="position: absolute; left: 0; top: 76px; bottom: 0; width: 64px; padding: 0; background: transparent; border: 0; cursor: pointer"><span class="bar" style="position: absolute; left: 0; top: 0; bottom: 0; width: 48px; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.3); color: #D4D4D4"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 3L6 10l7 7"></path></svg></span></button>
@@ -69,19 +71,19 @@ body{margin:0}
 </div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1400}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1520}}'>
 class Component extends DCLogic {
 constructor(props) {
 super(props);
 this.state = { at: 0 };
 }
 renderVals() {
-const names = ['home', 'graph', 'check', 'expand', 'namespaces', 'status'];
+const names = ['home', 'alerts', 'graph', 'check', 'expand', 'namespaces', 'status'];
 const at = this.state.at;
 const go = (i) => () => this.setState({ at: Math.max(0, Math.min(names.length - 1, i)) });
 return {
 offset: at * 1120,
-frameLeft: at * 1120 * 0.190476,
+frameLeft: at * 1120 * 0.163265,
 position: (at + 1) + ' of ' + names.length + ': ' + names[at],
 atStart: at === 0,
 atEnd: at === names.length - 1,
