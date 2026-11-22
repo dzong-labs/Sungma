@@ -57,9 +57,9 @@ body{margin:0}
 <button type="button" aria-haspopup="menu" aria-expanded="false" style="min-height: 44px; padding: 0; background: transparent; color: #D4D4D4; border: 0; font: inherit">mark</button>
 </span>
 </header>
-<div style="height: 924px; overflow-x: hidden; overflow-y: auto">
+<div style="height: 924px; overflow: hidden">
 <div style="width: 7840px; transform: translateX(-{{offset}}px); transition: transform 400ms ease">
-<dc-import name="Strip" hint-size="7840px,1500px"></dc-import>
+<dc-import name="Strip" strip-height="{{windowHeight}}" hint-size="7840px,924px"></dc-import>
 </div>
 </div>
 <sc-if value="{{hasPrev}}" hint-placeholder-val="{{ false }}">
@@ -78,11 +78,12 @@ super(props);
 this.state = { at: 0 };
 }
 renderVals() {
-const names = ['home', 'alerts', 'graph', 'check', 'expand', 'namespaces', 'status'];
+const names = ['home', 'alerts', 'graph', 'evaluate', 'namespaces', 'status', 'metrics'];
 const at = this.state.at;
 const go = (i) => () => this.setState({ at: Math.max(0, Math.min(names.length - 1, i)) });
 return {
 offset: at * 1120,
+windowHeight: 924,
 frameLeft: at * 1120 * 0.163265,
 position: (at + 1) + ' of ' + names.length + ': ' + names[at],
 atStart: at === 0,

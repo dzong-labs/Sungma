@@ -18,6 +18,6 @@
     "Strip.dc.html": { "x": 0, "y": 2240, "w": 7840, "h": 1500, "title": "The strip" }
   },
   "order": ["SignIn.dc.html", "HomePanorama.dc.html", "Panorama.dc.html", "Main.dc.html", "Facts.dc.html", "Check.dc.html", "Status.dc.html", "Expand.dc.html", "Namespaces.dc.html", "Editor.dc.html", "Strip.dc.html"],
-  "notes": { "panoramaNav": { "x": 4240, "y": -1640, "w": 400, "text": "Navigation: click the part of the next or previous page that shows at the window's edge, or a page name in the bar at the top. Either way the strip slides so that page moves into view; it never jumps." } },
+  "notes": { "panoramaNav": { "x": 4240, "y": -1640, "w": 400, "text": "Navigation: click the part of the next or previous page that shows at the window's edge, or a page name in the bar at the top. Either way the strip slides so that page moves into view; it never jumps." }, "evaluateLater": { "x": 4240, "y": -1040, "w": 400, "text": "Later: evaluate (check and expand) becomes a sub-page of both namespaces and graph. A top-level page for now." } },
   "designSystems": []
 }
