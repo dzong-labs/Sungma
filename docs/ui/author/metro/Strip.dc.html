@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The strip</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 6720px; height: 900px; display: flex; background: #1E1E1E; color: #D4D4D4; font-family: 'Segoe UI', 'Open Sans', sans-serif; font-size: 15px; line-height: 1.5">
+
+<section aria-label="home" style="flex: 0 0 1120px; box-sizing: border-box; padding: 40px 96px 0 64px; display: flex; flex-direction: column; gap: 48px">
+<h2 style="margin: 0; font-size: 112px; font-weight: 300; line-height: 1; letter-spacing: -0.03em">home</h2>
+<div style="display: flex; gap: 64px">
+<span style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 64px; font-weight: 300; line-height: 1; color: #E5322D">2</span><span style="display: flex; align-items: center; gap: 8px"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="6" fill="#E5322D"></circle></svg>security alerts</span></span>
+<span style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 64px; font-weight: 300; line-height: 1">1043</span><span>head revision</span></span>
+<span style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 64px; font-weight: 300; line-height: 1; color: #F2C200">12</span><span style="display: flex; align-items: center; gap: 8px"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0l6 12H0z" fill="#F2C200"></path></svg>revisions Check is behind</span></span>
+<span style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 64px; font-weight: 300; line-height: 1">38</span><span>relationships no longer count</span></span>
+</div>
+<div style="display: flex; gap: 64px">
+<div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<h3 style="margin: 0; font-size: 24px; font-weight: 300">security alerts</h3>
+<div style="display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: 2px 16px"><svg width="12" height="12" viewBox="0 0 12 12" style="margin-top: 6px" aria-hidden="true"><circle cx="6" cy="6" r="6" fill="#E5322D"></circle></svg><span style="font-weight: 600">svc-reports added itself to group:admins#member</span><span></span><span>A writer granted its own identity a relationship.</span></div>
+<div style="display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: 2px 16px"><svg width="12" height="12" viewBox="0 0 12 12" style="margin-top: 6px" aria-hidden="true"><circle cx="6" cy="6" r="6" fill="#E5322D"></circle></svg><span style="font-weight: 600">An unusually large grant to a sensitive group</span><span></span><span>hr-sync added 212 people to group:finance#member in one write.</span></div>
+</div>
+<div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<h3 style="margin: 0; font-size: 24px; font-weight: 300">change feed</h3>
+<div style="display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 2px 16px"><span style="font-size: 24px; font-weight: 300; line-height: 1.1; color: #9D9D9D">1043</span><span style="font-weight: 600">mark wrote 2 changes</span></div>
+<div style="display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 2px 16px"><span style="font-size: 24px; font-weight: 300; line-height: 1.1; color: #9D9D9D">1039</span><span style="font-weight: 600">hr-sync wrote 48 changes</span></div>
+<div style="display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 2px 16px"><span style="font-size: 24px; font-weight: 300; line-height: 1.1; color: #9D9D9D">1031</span><span style="font-weight: 600">dana wrote a version of a namespace</span></div>
+</div>
+</div>
+</section>
+
+<section aria-label="graph" style="flex: 0 0 1120px; box-sizing: border-box; padding: 40px 96px 0 64px; display: flex; flex-direction: column; gap: 40px">
+<h2 style="margin: 0; font-size: 112px; font-weight: 300; line-height: 1; letter-spacing: -0.03em">graph</h2>
+<div style="display: flex; flex-direction: column; max-width: 440px"><span style="color: #9D9D9D">subjectset</span><span style="min-height: 40px; display: flex; align-items: center; border-bottom: 1px solid #9D9D9D; font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 18px">group:eng#member</span></div>
+<div style="display: flex; gap: 72px">
+<div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0 0 6px; font-size: 24px; font-weight: 300">subjects <span style="font-size: 15px; color: #9D9D9D">33, read at 1043</span></h3>
+<span style="display: flex; align-items: center; gap: 12px"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0l6 12H0z" fill="#F2C200"></path></svg><span style="font-weight: 600">frank</span><span style="color: #9D9D9D">staged to add</span></span>
+<span style="padding-left: 24px">alice <span style="color: #9D9D9D">· 1001</span></span>
+<span style="display: flex; align-items: center; gap: 12px"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0l6 12H0z" fill="#F2C200"></path></svg><span style="font-weight: 600; text-decoration: line-through">bob</span><span style="color: #9D9D9D">staged to retire</span></span>
+<span style="padding-left: 24px">grace <span style="color: #9D9D9D">· 1039</span></span>
+<span style="padding-left: 24px; font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 14px">group:platform#member <span style="font-family: 'Segoe UI', 'Open Sans', sans-serif; font-size: 15px; color: #9D9D9D">· 1020</span></span>
+</div>
+<div style="flex: 0 0 300px; display: flex; flex-direction: column; gap: 14px">
+<h3 style="margin: 0; font-size: 24px; font-weight: 300; display: flex; align-items: baseline; gap: 12px"><span style="font-size: 48px; line-height: 1; color: #F2C200">2</span> pending changes</h3>
+<span><span style="font-weight: 600">add</span> frank</span>
+<span><span style="font-weight: 600">retire</span> bob</span>
+<span style="align-self: flex-start; min-height: 44px; display: inline-flex; align-items: center; padding: 0 20px; background: #D4D4D4; color: #1E1E1E; font-weight: 600">write 2 changes</span>
+</div>
+</div>
+</section>
+
+<section aria-label="check" style="flex: 0 0 1120px; box-sizing: border-box; padding: 40px 96px 0 64px; display: flex; flex-direction: column; gap: 48px">
+<h2 style="margin: 0; font-size: 112px; font-weight: 300; line-height: 1; letter-spacing: -0.03em">check</h2>
+<div style="display: flex; gap: 32px; align-items: flex-end">
+<div style="display: flex; flex-direction: column; flex: 0 0 300px"><span style="color: #9D9D9D">subjectset</span><span style="min-height: 40px; display: flex; align-items: center; border-bottom: 1px solid #9D9D9D; font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 16px">file:design.md#viewer</span></div>
+<div style="display: flex; flex-direction: column; flex: 0 0 160px"><span style="color: #9D9D9D">subject</span><span style="min-height: 40px; display: flex; align-items: center; border-bottom: 1px solid #9D9D9D; font-size: 16px">alice</span></div>
+</div>
+<div style="display: flex; gap: 80px; align-items: flex-start">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; gap: 24px"><svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="28" fill="#3D7BFF"></circle></svg><span style="font-size: 88px; font-weight: 300; line-height: 1; letter-spacing: -0.03em">allowed</span></div>
+<span style="color: #9D9D9D">decided at revision 1043</span>
+</div>
+<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
+<li style="display: grid; grid-template-columns: 32px minmax(0, 1fr); align-items: baseline; gap: 12px"><span style="font-size: 28px; font-weight: 300; color: #9D9D9D">1</span><span>group:eng#member holds alice</span></li>
+<li style="display: grid; grid-template-columns: 32px minmax(0, 1fr); align-items: baseline; gap: 12px"><span style="font-size: 28px; font-weight: 300; color: #9D9D9D">2</span><span>folder:root#viewer holds group:eng#member</span></li>
+<li style="display: grid; grid-template-columns: 32px minmax(0, 1fr); align-items: baseline; gap: 12px"><span style="font-size: 28px; font-weight: 300; color: #9D9D9D">3</span><span>folder:specs#parent holds folder:root</span></li>
+<li style="display: grid; grid-template-columns: 32px minmax(0, 1fr); align-items: baseline; gap: 12px"><span style="font-size: 28px; font-weight: 300; color: #9D9D9D">4</span><span>file:design.md#parent holds folder:specs</span></li>
+</ol>
+</div>
+</section>
+
+<section aria-label="expand" style="flex: 0 0 1120px; box-sizing: border-box; padding: 40px 96px 0 64px; display: flex; flex-direction: column; gap: 40px">
+<h2 style="margin: 0; font-size: 112px; font-weight: 300; line-height: 1; letter-spacing: -0.03em">expand</h2>
+<span style="font-size: 20px; font-weight: 300; color: #9D9D9D">Who is in a subjectset, and why, through every rewrite and nested group.</span>
+<div style="display: flex; gap: 80px; align-items: flex-start">
+<div style="flex: 1 1 0; min-width: 0; font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 14px; line-height: 1.8">
+<div style="font-size: 16px; font-weight: 600">file:design.md#viewer</div>
+<div style="margin-left: 4px; padding-left: 24px; border-left: 1px solid #4A4A4A">
+<div>editor → owner: carol</div>
+<div>parent → folder:specs → viewer</div>
+<div style="margin-left: 4px; padding-left: 24px; border-left: 1px solid #4A4A4A">
+<div>parent → folder:root → viewer</div>
+<div style="margin-left: 4px; padding-left: 24px; border-left: 1px solid #4A4A4A">group:eng#member: alice, <span style="text-decoration: line-through; color: #9D9D9D">bob</span></div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px"><svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="6" fill="#E5322D"></circle></svg>banned: bob</div>
+</div>
+</div>
+<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 8px">
+<span style="display: flex; align-items: baseline; gap: 14px; font-size: 24px; font-weight: 300"><span style="font-size: 64px; line-height: 1">2</span> viewers</span>
+<span style="display: flex; align-items: center; gap: 10px"><svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="6" fill="#3D7BFF"></circle></svg>alice</span>
+<span style="display: flex; align-items: center; gap: 10px"><svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="6" fill="#3D7BFF"></circle></svg>carol</span>
+</div>
+</div>
+</section>
+
+<section aria-label="namespaces" style="flex: 0 0 1120px; box-sizing: border-box; padding: 40px 96px 0 64px; display: flex; flex-direction: column; gap: 40px">
+<h2 style="margin: 0; font-size: 112px; font-weight: 300; line-height: 1; letter-spacing: -0.03em">namespaces</h2>
+<div style="display: flex; gap: 80px; align-items: flex-start">
+<div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="display: flex; align-items: baseline; gap: 20px"><span style="font-size: 40px; font-weight: 300; line-height: 1.1">documents</span><span style="color: #9D9D9D">theory · 2 namespaces</span></span>
+<span style="display: flex; flex-direction: column"><span style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 22px">file</span><span style="color: #9D9D9D">auditor, banned, editor, owner, parent, viewer · version 1031</span></span>
+<span style="display: flex; flex-direction: column"><span style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 22px">folder</span><span style="color: #9D9D9D">banned, owner, parent, viewer · version 1012</span></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="display: flex; align-items: baseline; gap: 20px"><span style="font-size: 40px; font-weight: 300; line-height: 1.1">not in a theory</span><span style="color: #9D9D9D">1 namespace</span></span>
+<span style="display: flex; flex-direction: column"><span style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 22px">group</span><span style="color: #9D9D9D">member · version 1004</span></span>
+</div>
+</div>
+<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 24px; font-weight: 300">versions of <span style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 22px">file</span></span>
+<span style="display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 16px"><span style="font-size: 24px; font-weight: 300; line-height: 1.1">1031</span><span><span style="font-weight: 600">current</span> · adds auditor</span></span>
+<span style="display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 16px"><span style="font-size: 24px; font-weight: 300; line-height: 1.1; color: #9D9D9D">1020</span><span style="color: #9D9D9D">superseded at 1031</span></span>
+<span style="display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 16px"><span style="font-size: 24px; font-weight: 300; line-height: 1.1; color: #9D9D9D">1004</span><span style="color: #9D9D9D">superseded at 1020</span></span>
+</div>
+</div>
+</section>
+
+<section aria-label="status" style="flex: 0 0 1120px; box-sizing: border-box; padding: 40px 96px 0 64px; display: flex; flex-direction: column; gap: 40px">
+<h2 style="margin: 0; font-size: 112px; font-weight: 300; line-height: 1; letter-spacing: -0.03em">status</h2>
+<span style="font-size: 32px; font-weight: 300">all services are serving</span>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<sc-for list="{{services}}" as="service" hint-placeholder-count="6">
+<div style="display: grid; grid-template-columns: 96px repeat(24, minmax(0, 1fr)); gap: 4px; align-items: center; min-height: 28px">
+<span style="font-weight: 600">{{service.name}}</span>
+<sc-for list="{{service.cells}}" as="cell" hint-placeholder-count="24">
+<span role="img" aria-label="{{cell.label}}" style="display: flex; justify-content: center">
+<sc-if value="{{cell.ok}}" hint-placeholder-val="{{ true }}"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="3" y="3" width="6" height="6" fill="#6B6B6B"></rect></svg></sc-if>
+<sc-if value="{{cell.warn}}" hint-placeholder-val="{{ false }}"><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0l6 12H0z" fill="#F2C200"></path></svg></sc-if>
+<sc-if value="{{cell.down}}" hint-placeholder-val="{{ false }}"><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="6" fill="#E5322D"></circle></svg></sc-if>
+</span>
+</sc-for>
+</div>
+</sc-for>
+</div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":6720,"height":900}}'>
+class Component extends DCLogic {
+renderVals() {
+const hours = [];
+for (let i = 0; i < 24; i++) {
+hours.push(String((15 + i) % 24).padStart(2, '0'));
+}
+const row = (name, at) => ({
+name,
+cells: hours.map((hour, i) => {
+const state = at(i);
+const word = state === 'down' ? 'down' : state === 'warn' ? 'degraded' : 'serving';
+return { ok: state === 'ok', warn: state === 'warn', down: state === 'down', label: name + ' at ' + hour + ':00, ' + word };
+}),
+});
+const always = () => 'ok';
+return {
+services: [
+row('Check', (i) => (i === 12 || i === 13 ? 'warn' : 'ok')),
+row('Read', always),
+row('Write', (i) => (i === 12 ? 'down' : 'ok')),
+row('Author', always),
+row('Table', (i) => (i === 12 ? 'warn' : 'ok')),
+row('Sign-in', always),
+],
+};
+}
+}
+</script>
+</body>
+</html>

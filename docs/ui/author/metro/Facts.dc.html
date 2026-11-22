@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Graph</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&amp;display=swap">
+<style>
+body{margin:0}
+:root{color-scheme:dark}
+a{color:#D4D4D4;text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:#9D9D9D}
+</style>
+</helmet>
+<div style="min-height: 1000px; background: #1E1E1E; color: #D4D4D4; font-family: 'Segoe UI', 'Open Sans', sans-serif; font-size: 15px; line-height: 1.5">
+<header style="padding: 24px 64px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 40px">
+<a href="Main.dc.html" style="font-weight: 600; text-decoration: none">sungma author</a>
+<nav aria-label="Pages" style="display: flex; flex-wrap: wrap; gap: 0 28px; font-size: 18px; font-weight: 300">
+<a href="Main.dc.html" style="min-height: 44px; display: inline-flex; align-items: center; color: #9D9D9D; text-decoration: none">home</a>
+<a href="Facts.dc.html" aria-current="page" style="min-height: 44px; display: inline-flex; align-items: center; color: #D4D4D4; font-weight: 600; text-decoration: none">graph</a>
+<a href="Check.dc.html" style="min-height: 44px; display: inline-flex; align-items: center; color: #9D9D9D; text-decoration: none">check</a>
+<a href="Expand.dc.html" style="min-height: 44px; display: inline-flex; align-items: center; color: #9D9D9D; text-decoration: none">expand</a>
+<a href="Namespaces.dc.html" style="min-height: 44px; display: inline-flex; align-items: center; color: #9D9D9D; text-decoration: none">namespaces</a>
+<a href="Status.dc.html" style="min-height: 44px; display: inline-flex; align-items: center; color: #9D9D9D; text-decoration: none">status</a>
+</nav>
+<div style="margin-left: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px">
+<form role="search" style="display: flex">
+<label for="q" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Search everything</label>
+<input id="q" type="search" placeholder="search" style="width: 200px; min-height: 40px; box-sizing: border-box; padding: 0; background: transparent; color: #D4D4D4; border: 0; border-bottom: 1px solid #9D9D9D; border-radius: 0; font: inherit">
+</form>
+<span style="color: #9D9D9D">head <span style="color: #D4D4D4">1043</span></span>
+<button type="button" aria-haspopup="menu" aria-expanded="false" style="min-height: 44px; padding: 0; background: transparent; color: #D4D4D4; border: 0; font: inherit">mark</button>
+</div>
+</header>
+<h1 style="margin: 0; padding: 40px 64px 0; font-size: clamp(56px, 8vw, 112px); font-weight: 300; line-height: 1; letter-spacing: -0.03em">graph</h1>
+<main style="padding: 40px 64px 96px; display: flex; flex-direction: column; gap: 48px">
+<form style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px 32px">
+<div style="flex: 1 1 320px; min-width: 0; max-width: 480px; display: flex; flex-direction: column">
+<label for="set" style="color: #9D9D9D">subjectset</label>
+<input id="set" value="group:eng#member" style="min-height: 44px; box-sizing: border-box; padding: 0; background: transparent; color: #D4D4D4; border: 0; border-bottom: 1px solid #9D9D9D; border-radius: 0; font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 18px">
+</div>
+<div style="flex: 0 1 160px; min-width: 0; display: flex; flex-direction: column">
+<label for="rev" style="color: #9D9D9D">at revision</label>
+<input id="rev" placeholder="latest" style="min-height: 44px; box-sizing: border-box; padding: 0; background: transparent; color: #D4D4D4; border: 0; border-bottom: 1px solid #9D9D9D; border-radius: 0; font: inherit">
+</div>
+<button type="button" style="min-height: 44px; padding: 0; background: transparent; color: #D4D4D4; border: 0; font: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 3px">open</button>
+</form>
+<div style="display: flex; flex-wrap: wrap; gap: 48px 72px; align-items: flex-start">
+<section aria-label="Subjects" style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 20px">
+<h2 style="margin: 0; font-size: 24px; font-weight: 300">subjects</h2>
+<span style="color: #9D9D9D">33, read at 1043</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px 28px">
+<div style="flex: 1 1 280px; min-width: 0; display: flex; flex-direction: column">
+<label for="add" style="color: #9D9D9D">add a subject</label>
+<input id="add" placeholder="identity, or namespace:id#relation" style="min-height: 44px; box-sizing: border-box; padding: 0; background: transparent; color: #D4D4D4; border: 0; border-bottom: 1px solid #9D9D9D; border-radius: 0; font: inherit">
+</div>
+<button type="button" style="min-height: 44px; padding: 0; background: transparent; color: #D4D4D4; border: 0; font: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 3px">stage</button>
+<button type="button" style="min-height: 44px; padding: 0; background: transparent; color: #D4D4D4; border: 0; font: inherit; text-decoration: underline; text-underline-offset: 3px">paste a list</button>
+</div>
+<div style="overflow-x: auto">
+<table style="width: 100%; min-width: 560px; border-collapse: collapse">
+<thead>
+<tr style="color: #9D9D9D; text-align: left">
+<th style="padding: 0 16px 8px 0; font-weight: 400; width: 20px"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Staged</span></th>
+<th style="padding: 0 16px 8px 0; font-weight: 400">subject</th>
+<th style="padding: 0 16px 8px 0; font-weight: 400">kind</th>
+<th style="padding: 0 16px 8px 0; font-weight: 400">written at</th>
+<th style="padding: 0 0 8px; font-weight: 400"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Actions</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 0 16px 0 0"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0l6 12H0z" fill="#F2C200"></path></svg></td>
+<td style="padding: 0 16px 0 0; font-weight: 600">frank</td>
+<td style="padding: 0 16px 0 0">identity</td>
+<td style="padding: 0 16px 0 0; font-weight: 600">staged to add</td>
+<td style="padding: 0; text-align: right"><button type="button" style="min-height: 44px; padding: 0; background: transparent; color: #D4D4D4; border: 0; font: inherit; text-decoration: underline; text-underline-offset: 3px">unstage</button></td>
+</tr>
+<tr>
+<td style="padding: 0 16px 0 0"></td>
+<td style="padding: 0 16px 0 0">alice</td>
+<td style="padding: 0 16px 0 0">identity</td>
+<td style="padding: 0 16px 0 0; color: #9D9D9D">1001</td>
+<td style="padding: 0; text-align: right"><button type="button" style="min-height: 44px; padding: 0; background: transparent; color: #9D9D9D; border: 0; font: inherit; text-decoration: underline; text-underline-offset: 3px">retire</button></td>
+</tr>
+<tr>
+<td style="padding: 0 16px 0 0"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0l6 12H0z" fill="#F2C200"></path></svg></td>
+<td style="padding: 0 16px 0 0; font-weight: 600; text-decoration: line-through">bob</td>
+<td style="padding: 0 16px 0 0">identity</td>
+<td style="padding: 0 16px 0 0; font-weight: 600">staged to retire</td>
+<td style="padding: 0; text-align: right"><button type="button" style="min-height: 44px; padding: 0; background: transparent; color: #D4D4D4; border: 0; font: inherit; text-decoration: underline; text-underline-offset: 3px">unstage</button></td>
+</tr>
+<tr>
+<td style="padding: 0 16px 0 0"></td>
+<td style="padding: 0 16px 0 0">grace</td>
+<td style="padding: 0 16px 0 0">identity</td>
+<td style="padding: 0 16px 0 0; color: #9D9D9D">1039</td>
+<td style="padding: 0; text-align: right"><button type="button" style="min-height: 44px; padding: 0; background: transparent; color: #9D9D9D; border: 0; font: inherit; text-decoration: underline; text-underline-offset: 3px">retire</button></td>
+</tr>
+<tr>
+<td style="padding: 0 16px 0 0"></td>
+<td style="padding: 0 16px 0 0"><a href="Facts.dc.html" style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 14px">group:platform#member</a></td>
+<td style="padding: 0 16px 0 0">subjectset</td>
+<td style="padding: 0 16px 0 0; color: #9D9D9D">1020</td>
+<td style="padding: 0; text-align: right"><button type="button" style="min-height: 44px; padding: 0; background: transparent; color: #9D9D9D; border: 0; font: inherit; text-decoration: underline; text-underline-offset: 3px">retire</button></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 12px">
+<span style="color: #9D9D9D">showing 4 of 33</span>
+<div style="display: flex; flex-direction: column">
+<label for="filter" style="color: #9D9D9D">filter</label>
+<input id="filter" type="search" style="width: 200px; min-height: 40px; box-sizing: border-box; padding: 0; background: transparent; color: #D4D4D4; border: 0; border-bottom: 1px solid #9D9D9D; border-radius: 0; font: inherit">
+</div>
+</div>
+</section>
+<aside aria-label="Pending changes" style="flex: 1 1 280px; min-width: 0; max-width: 360px; display: flex; flex-direction: column; gap: 48px">
+<section style="display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 24px; font-weight: 300; display: flex; align-items: baseline; gap: 12px"><span style="font-size: 48px; line-height: 1; color: #F2C200">2</span> pending changes</h2>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px">
+<li><span style="font-weight: 600">add</span> frank to <code style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 14px">group:eng#member</code></li>
+<li><span style="font-weight: 600">retire</span> bob from <code style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 14px">group:eng#member</code></li>
+</ul>
+<p style="margin: 0; color: #9D9D9D">Changes stay staged as you open other subjectsets. They all land at one revision, or none do.</p>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px">
+<button type="button" style="min-height: 44px; padding: 0 20px; background: #D4D4D4; color: #1E1E1E; border: 0; border-radius: 0; font: inherit; font-weight: 600">write 2 changes</button>
+<button type="button" style="min-height: 44px; padding: 0; background: transparent; color: #D4D4D4; border: 0; font: inherit; text-decoration: underline; text-underline-offset: 3px">discard</button>
+</div>
+</section>
+<section aria-label="Tools" style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; gap: 24px">
+<button type="button" aria-pressed="true" style="min-height: 44px; padding: 0; background: transparent; border: 0; font: inherit; font-size: 24px; font-weight: 300; color: #D4D4D4">check</button>
+<button type="button" aria-pressed="false" style="min-height: 44px; padding: 0; background: transparent; border: 0; font: inherit; font-size: 24px; font-weight: 300; color: #6B6B6B">expand</button>
+</div>
+<div style="display: flex; flex-direction: column">
+<label for="tsub" style="color: #9D9D9D">is this subject</label>
+<input id="tsub" value="frank" style="min-height: 44px; box-sizing: border-box; padding: 0; background: transparent; color: #D4D4D4; border: 0; border-bottom: 1px solid #9D9D9D; border-radius: 0; font: inherit">
+</div>
+<div style="display: flex; flex-direction: column">
+<label for="tset" style="color: #9D9D9D">in this subjectset?</label>
+<input id="tset" value="file:design.md#viewer" style="min-height: 44px; box-sizing: border-box; padding: 0; background: transparent; color: #D4D4D4; border: 0; border-bottom: 1px solid #9D9D9D; border-radius: 0; font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 14px">
+</div>
+<button type="button" style="align-self: flex-start; min-height: 44px; padding: 0; background: transparent; color: #D4D4D4; border: 0; font: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 3px">check</button>
+<div style="display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: 2px 16px">
+<svg width="12" height="12" viewBox="0 0 12 12" style="margin-top: 6px" aria-hidden="true"><circle cx="6" cy="6" r="6" fill="#E5322D"></circle></svg>
+<span style="font-weight: 600">not at 1043</span>
+<span></span>
+<span>Check reads what's written. Write your pending changes, then check again.</span>
+<span></span>
+<a href="Check.dc.html">open the full check</a>
+</div>
+</section>
+<section style="display: flex; flex-direction: column; gap: 4px">
+<h2 style="margin: 0 0 8px; font-size: 24px; font-weight: 300">last write</h2>
+<span>written at revision 1043</span>
+<a href="Check.dc.html">check at this revision</a>
+</section>
+</aside>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1000}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>
