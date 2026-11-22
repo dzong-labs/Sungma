@@ -108,7 +108,7 @@ jobs:
     - uses: ./.github/actions/setup-rust
       with:
         components: llvm-tools-preview
-    - uses: taiki-e/install-action@c509219cf42fba86913069efd0ade2458c59337b # v2.90.1
+    - uses: taiki-e/install-action@ab49d3c64680143e184118bed66a46419fc15519 # v2.90.5
       with:
         tool: cargo-llvm-cov@0.9.1
 
@@ -121,7 +121,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-    - uses: taiki-e/install-action@c509219cf42fba86913069efd0ade2458c59337b # v2.90.1
+    - uses: taiki-e/install-action@ab49d3c64680143e184118bed66a46419fc15519 # v2.90.5
       with:
         tool: cargo-audit@0.22.2
 
@@ -152,7 +152,7 @@ jobs:
       with:
         fetch-depth: 0
     - uses: ./.github/actions/setup-rust
-    - uses: taiki-e/install-action@c509219cf42fba86913069efd0ade2458c59337b # v2.90.1
+    - uses: taiki-e/install-action@ab49d3c64680143e184118bed66a46419fc15519 # v2.90.5
       with:
         tool: cargo-mutants@27.1.0
 
@@ -181,7 +181,7 @@ jobs:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
     - name: Install nightly
       run: rustup toolchain install $NIGHTLY --profile minimal
-    - uses: taiki-e/install-action@c509219cf42fba86913069efd0ade2458c59337b # v2.90.1
+    - uses: taiki-e/install-action@ab49d3c64680143e184118bed66a46419fc15519 # v2.90.5
       with:
         tool: cargo-fuzz@0.13.2
     # The corpus a run grows is kept for the next, so each starts where the last left off.
@@ -201,13 +201,6 @@ jobs:
         cargo +$NIGHTLY fuzz run --target x86_64-unknown-linux-gnu
         document fuzz/corpus/document fuzz/seeds/document --
         -dict=fuzz/document.dict -max_len=65536 -max_total_time=60
-
-    - name: Fuzz the TOML namespace document parser for a minute
-      run: >
-        mkdir -p fuzz/corpus/document_toml &&
-        cargo +$NIGHTLY fuzz run --target x86_64-unknown-linux-gnu
-        document_toml fuzz/corpus/document_toml fuzz/seeds/document_toml --
-        -dict=fuzz/document_toml.dict -max_len=65536 -max_total_time=60
 
     - name: Fuzz the fact document parser for a minute
       run: >

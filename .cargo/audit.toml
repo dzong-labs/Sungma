@@ -6,4 +6,9 @@ ignore = [
     # no RSA private key. No patched rsa release exists. When to drop this:
     # docs/todos/drop-the-rsa-advisory-ignore.md.
     "RUSTSEC-2023-0071",
+    # chrono, through openidconnect and oauth2, and used directly by
+    # sungma-bff: the crate is unmaintained. The advisory is informational,
+    # reports no flaw, and lists no patched version. When to drop this:
+    # docs/todos/drop-the-chrono-advisory-ignore.md.
+    "RUSTSEC-2026-0543",
 ]
