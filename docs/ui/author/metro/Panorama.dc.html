@@ -74,10 +74,16 @@ body{margin:0}
 class Component extends DCLogic {
 constructor(props) {
 super(props);
-this.state = { at: 0 };
+let at = 0;
+try {
+const names = ['start', 'alerts', 'graph', 'evaluate', 'namespaces', 'status', 'help'];
+const i = names.indexOf((window.location.hash || '').slice(1));
+if (i > 0) at = i;
+} catch (e) {}
+this.state = { at };
 }
 renderVals() {
-const names = ['start', 'alerts', 'graph', 'evaluate', 'namespaces', 'status', 'metrics'];
+const names = ['start', 'alerts', 'graph', 'evaluate', 'namespaces', 'status', 'help'];
 const at = this.state.at;
 const go = (i) => () => this.setState({ at: Math.max(0, Math.min(names.length - 1, i)) });
 return {
