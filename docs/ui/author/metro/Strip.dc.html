@@ -387,6 +387,27 @@ a{color:#D4D4D4;text-decoration-thickness:1px;text-underline-offset:3px}a:visite
 </section>
 <section aria-label="status" style="flex: 0 0 1120px; box-sizing: border-box; padding: 40px 96px 64px 64px; overflow-y: auto; min-height: 0; display: flex; flex-direction: column; gap: 40px">
 <h2 style="margin: 0; font-size: 101px; font-weight: 300; line-height: 1; letter-spacing: -0.03em">status</h2>
+<div role="tablist" aria-label="Status views" style="display: flex; gap: 32px"><button type="button" role="tab" aria-selected="{{tabOverview.sel}}" onClick="{{tabOverview.go}}" style="min-height: 44px; padding: 0; background: transparent; border: 0; font: inherit; font-size: 24px; font-weight: 300; color: {{tabOverview.color}}">overview</button><button type="button" role="tab" aria-selected="{{tabObjectives.sel}}" onClick="{{tabObjectives.go}}" style="min-height: 44px; padding: 0; background: transparent; border: 0; font: inherit; font-size: 24px; font-weight: 300; color: {{tabObjectives.color}}">objectives</button><button type="button" role="tab" aria-selected="{{tabSignals.sel}}" onClick="{{tabSignals.go}}" style="min-height: 44px; padding: 0; background: transparent; border: 0; font: inherit; font-size: 24px; font-weight: 300; color: {{tabSignals.color}}">signals</button></div>
+<sc-if value="{{tabOverview.on}}" hint-placeholder-val="{{ true }}"><div role="tabpanel" style="display: flex; flex-direction: column; gap: 48px">
+<section aria-label="Services" style="display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0; font-size: 24px; font-weight: 300">the last 24 hours</h3>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: grid; grid-template-columns: 96px 104px repeat(24, minmax(0, 1fr)); gap: 4px; color: #9D9D9D; font-size: 12px; align-items: end"><span style="font-size: 15px">service</span><span style="font-size: 15px">version</span><sc-for list="{{hours}}" as="hour" hint-placeholder-count="24"><span style="text-align: center">{{hour}}</span></sc-for></div>
+<sc-for list="{{services}}" as="service" hint-placeholder-count="6">
+<div style="display: grid; grid-template-columns: 96px 104px repeat(24, minmax(0, 1fr)); gap: 4px; align-items: center; min-height: 28px">
+<span style="font-weight: 600">{{service.name}}</span>
+<code style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 13px; color: #9D9D9D">{{service.version}}</code>
+<sc-for list="{{service.cells}}" as="cell" hint-placeholder-count="24">
+<span role="img" aria-label="{{cell.label}}" style="display: flex; justify-content: center">
+<sc-if value="{{cell.ok}}" hint-placeholder-val="{{ true }}"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="3" y="3" width="6" height="6" fill="#6B6B6B"></rect></svg></sc-if>
+<sc-if value="{{cell.warn}}" hint-placeholder-val="{{ false }}"><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0l6 12H0z" fill="#F2C200"></path></svg></sc-if>
+<sc-if value="{{cell.down}}" hint-placeholder-val="{{ false }}"><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><rect x="0.75" y="0.75" width="10.5" height="10.5" fill="none" stroke="#E5322D" stroke-width="1.5"></rect><path d="M3.5 3.5L8.5 8.5M8.5 3.5L3.5 8.5" stroke="#E5322D" stroke-width="1.5"></path></svg></sc-if>
+</span>
+</sc-for>
+</div>
+</sc-for>
+</div>
+</section>
 <section aria-label="Status feed" style="max-width: 760px; display: flex; flex-direction: column; gap: 16px">
 <h2 style="margin: 0; font-size: 24px; font-weight: 300">status feed</h2>
 <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 22px">
@@ -417,25 +438,8 @@ a{color:#D4D4D4;text-decoration-thickness:1px;text-underline-offset:3px}a:visite
 </ol>
 <a href="#" style="align-self: flex-start; margin-left: 28px; color: #9D9D9D">see more</a>
 </section>
-<section aria-label="Services" style="display: flex; flex-direction: column; gap: 16px">
-<h3 style="margin: 0; font-size: 24px; font-weight: 300">the last 24 hours</h3>
-<div style="display: flex; flex-direction: column; gap: 6px">
-<div style="display: grid; grid-template-columns: 96px 104px repeat(24, minmax(0, 1fr)); gap: 4px; color: #9D9D9D; font-size: 12px; align-items: end"><span style="font-size: 15px">service</span><span style="font-size: 15px">version</span><sc-for list="{{hours}}" as="hour" hint-placeholder-count="24"><span style="text-align: center">{{hour}}</span></sc-for></div>
-<sc-for list="{{services}}" as="service" hint-placeholder-count="6">
-<div style="display: grid; grid-template-columns: 96px 104px repeat(24, minmax(0, 1fr)); gap: 4px; align-items: center; min-height: 28px">
-<span style="font-weight: 600">{{service.name}}</span>
-<code style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 13px; color: #9D9D9D">{{service.version}}</code>
-<sc-for list="{{service.cells}}" as="cell" hint-placeholder-count="24">
-<span role="img" aria-label="{{cell.label}}" style="display: flex; justify-content: center">
-<sc-if value="{{cell.ok}}" hint-placeholder-val="{{ true }}"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="3" y="3" width="6" height="6" fill="#6B6B6B"></rect></svg></sc-if>
-<sc-if value="{{cell.warn}}" hint-placeholder-val="{{ false }}"><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0l6 12H0z" fill="#F2C200"></path></svg></sc-if>
-<sc-if value="{{cell.down}}" hint-placeholder-val="{{ false }}"><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><rect x="0.75" y="0.75" width="10.5" height="10.5" fill="none" stroke="#E5322D" stroke-width="1.5"></rect><path d="M3.5 3.5L8.5 8.5M8.5 3.5L3.5 8.5" stroke="#E5322D" stroke-width="1.5"></path></svg></sc-if>
-</span>
-</sc-for>
-</div>
-</sc-for>
-</div>
-</section>
+</div></sc-if>
+<sc-if value="{{tabObjectives.on}}" hint-placeholder-val="{{ false }}"><div role="tabpanel">
 <section aria-label="Objectives" style="display: flex; flex-direction: column; gap: 16px">
 <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 20px">
 <h3 style="margin: 0; font-size: 24px; font-weight: 300">objectives</h3>
@@ -468,6 +472,8 @@ a{color:#D4D4D4;text-decoration-thickness:1px;text-underline-offset:3px}a:visite
 </table>
 </div>
 </section>
+</div></sc-if>
+<sc-if value="{{tabSignals.on}}" hint-placeholder-val="{{ false }}"><div role="tabpanel">
 <section aria-label="Golden signals" style="display: flex; flex-direction: column; gap: 16px">
 <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 20px">
 <h3 style="margin: 0; font-size: 24px; font-weight: 300">golden signals</h3>
@@ -513,6 +519,7 @@ a{color:#D4D4D4;text-decoration-thickness:1px;text-underline-offset:3px}a:visite
 </table>
 </div>
 </section>
+</div></sc-if>
 </section>
 <section aria-label="help" style="flex: 0 0 1120px; box-sizing: border-box; padding: 40px 96px 64px 64px; overflow-y: auto; min-height: 0; display: flex; flex-direction: column; gap: 40px">
 <h2 style="margin: 0; font-size: 101px; font-weight: 300; line-height: 1; letter-spacing: -0.03em">help</h2>
@@ -542,6 +549,10 @@ a{color:#D4D4D4;text-decoration-thickness:1px;text-underline-offset:3px}a:visite
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"stripHeight":{"editor":null},"onGo":{"editor":null},"$preview":{"width":7840,"height":1500}}'>
 class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { statusTab: 'overview' };
+}
 go(e, name) {
 if (this.props.onGo) {
 e?.preventDefault?.();
@@ -563,7 +574,16 @@ return { ok: state === 'ok', warn: state === 'warn', down: state === 'down', lab
 }),
 });
 const always = () => 'ok';
+const tab = (name) => ({
+on: this.state.statusTab === name,
+sel: this.state.statusTab === name ? 'true' : 'false',
+color: this.state.statusTab === name ? '#D4D4D4' : '#6B6B6B',
+go: () => this.setState({ statusTab: name }),
+});
 return {
+tabOverview: tab('overview'),
+tabObjectives: tab('objectives'),
+tabSignals: tab('signals'),
 stripHeight: this.props.stripHeight ?? 1500,
 hours,
 goEvaluate: (e) => this.go(e, 'evaluate'),
