@@ -1,5 +1,3 @@
-![Sungma](https://raw.githubusercontent.com/dzong-labs/Sungma/main/assets/logo/sungma-sml.png "Sungma")
-
 # Sungma
 
 Sungma: spirits bound by oath to protect the sacred teachings of the Dharma.
