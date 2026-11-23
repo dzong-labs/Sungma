@@ -74,7 +74,13 @@ body{margin:0}
 class Component extends DCLogic {
 constructor(props) {
 super(props);
-this.state = { at: 0 };
+let at = 0;
+try {
+const names = ['start', 'alerts', 'graph', 'evaluate', 'namespaces', 'status', 'help'];
+const i = names.indexOf((window.location.hash || '').slice(1));
+if (i > 0) at = i;
+} catch (e) {}
+this.state = { at };
 }
 renderVals() {
 const names = ['start', 'alerts', 'graph', 'evaluate', 'namespaces', 'status', 'help'];
