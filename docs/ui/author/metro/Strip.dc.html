@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The strip</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#D4D4D4;text-decoration-thickness:1px;text-underline-offset:3px}a:visited{color:#D4D4D4}a:hover{color:#9D9D9D}
+</style>
+</helmet>
+<div style="width: 7840px; height: {{stripHeight}}px; display: flex; background: #1E1E1E; color: #D4D4D4; font-family: 'Segoe UI', 'Open Sans', sans-serif; font-size: 15px; line-height: 1.5">
+<section aria-label="start" style="flex: 0 0 1120px; box-sizing: border-box; padding: 40px 96px 64px 64px; overflow-y: auto; min-height: 0; display: flex; flex-direction: column; gap: 48px">
+<h2 style="margin: 0; font-size: 101px; font-weight: 300; line-height: 1; letter-spacing: -0.03em">start</h2>
+<div style="display: flex; gap: 56px">
+<a href="#alerts" onClick="{{goAlerts}}" style="text-decoration: none; display: flex; flex-direction: column; gap: 4px; color: #D4D4D4"><span style="font-size: 40px; font-weight: 300; line-height: 1">57</span><span>alerts</span></a>
+<a href="#graph" onClick="{{goGraph}}" style="text-decoration: none; display: flex; flex-direction: column; gap: 4px; color: #D4D4D4"><span style="font-size: 40px; font-weight: 300; line-height: 1">2</span><span>pending changes</span></a>
+<a href="#change-feed" style="text-decoration: none; display: flex; flex-direction: column; gap: 4px; color: #D4D4D4"><span style="font-size: 40px; font-weight: 300; line-height: 1">138</span><span>recent changes</span></a>
+<a href="#metrics" onClick="{{goMetrics}}" style="text-decoration: none; display: flex; flex-direction: column; gap: 4px; color: #D4D4D4"><span style="font-size: 40px; font-weight: 300; line-height: 1">20,480</span><span>checks per minute</span></a>
+<a href="#metrics" onClick="{{goMetrics}}" style="text-decoration: none; display: flex; flex-direction: column; gap: 4px; color: #D4D4D4"><span style="font-size: 40px; font-weight: 300; line-height: 1">8 ms</span><span>check latency (p99)</span></a>
+</div>
+<div style="display: flex; gap: 48px; align-items: flex-start">
+<div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0; font-size: 24px; font-weight: 300">start</h3>
+<div style="display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 2px 16px; align-items: center"><span aria-hidden="true" style="width: 38px; height: 38px; box-sizing: border-box; border: 1px solid #9D9D9D; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: #D4D4D4; font-family: 'Segoe UI', 'Open Sans', sans-serif; font-weight: 300; font-size: 22px; line-height: 1; white-space: nowrap; padding-bottom: 2px">+</span><a href="#" style="font-weight: 600; color: #D4D4D4; text-decoration: none">add relationship</a><span></span><span>Give someone a relation to a resource.</span></div>
+<div style="display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 2px 16px; align-items: center"><span aria-hidden="true" style="width: 38px; height: 38px; box-sizing: border-box; border: 1px solid #9D9D9D; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: #D4D4D4; font-family: 'Segoe UI', 'Open Sans', sans-serif; font-weight: 300; font-size: 16px; line-height: 1; white-space: nowrap; padding-bottom: 2px">∈?</span><a href="#" style="font-weight: 600; color: #D4D4D4; text-decoration: none">troubleshoot access</a><span></span><span>See why a check says yes or no.</span></div>
+<div style="display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 2px 16px; align-items: center"><span aria-hidden="true" style="width: 38px; height: 38px; box-sizing: border-box; border: 1px solid #9D9D9D; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: #D4D4D4; font-family: 'Segoe UI', 'Open Sans', sans-serif; font-weight: 300; font-size: 16px; line-height: 1; white-space: nowrap; padding-bottom: 2px">{ }</span><a href="#" style="font-weight: 600; color: #D4D4D4; text-decoration: none">reporting</a><span></span><span>Export everyone who can reach a resource, for an access review.</span></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0; font-size: 24px; font-weight: 300">alerts</h3>
+<div style="display: grid; grid-template-columns: 17px minmax(0, 1fr); align-items: center; gap: 2px 16px"><svg width="17" height="17" viewBox="0 0 16 16" style="flex: 0 0 auto" aria-hidden="true"><path d="M8 1.5L13.5 3.5V8C13.5 11 11 13.25 8 14.5C5 13.25 2.5 11 2.5 8V3.5Z" fill="none" stroke="#E5322D" stroke-width="1.5" stroke-linejoin="round"></path><path d="M8 5V9" stroke="#E5322D" stroke-width="1.5" stroke-linecap="round"></path><circle cx="8" cy="11.3" r="0.9" fill="#E5322D"></circle></svg><span style="font-weight: 600">svc-reports added itself to group:admins#member</span><span></span><span>A writer granted its own identity a relationship.</span></div>
+<div style="display: grid; grid-template-columns: 17px minmax(0, 1fr); align-items: center; gap: 2px 16px"><svg width="17" height="17" viewBox="0 0 16 16" style="flex: 0 0 auto" aria-hidden="true"><path d="M8 1.5L13.5 3.5V8C13.5 11 11 13.25 8 14.5C5 13.25 2.5 11 2.5 8V3.5Z" fill="none" stroke="#E5322D" stroke-width="1.5" stroke-linejoin="round"></path><path d="M8 5V9" stroke="#E5322D" stroke-width="1.5" stroke-linecap="round"></path><circle cx="8" cy="11.3" r="0.9" fill="#E5322D"></circle></svg><span style="font-weight: 600">An unusually large grant to a sensitive group</span><span></span><span>hr-sync added 212 people to group:finance#member in one write.</span></div>
+<div style="display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: 2px 16px"><svg width="12" height="12" viewBox="0 0 12 12" style="margin-top: 6px" aria-hidden="true"><rect x="1" y="1" width="10" height="10" fill="none" stroke="#D4D4D4" stroke-width="1.5"></rect></svg><span style="font-weight: 600">One client asked about 9,400 resources for one person</span></div>
+<a href="#alerts" onClick="{{goAlerts}}" style="align-self: flex-start; margin-left: 33px; color: #9D9D9D">see more</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0; font-size: 24px; font-weight: 300"><a href="#status" onClick="{{goStatus}}" style="color: #D4D4D4; text-decoration: none">status</a></h3>
+<div style="display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: 2px 16px"><svg width="12" height="12" viewBox="0 0 12 12" style="margin-top: 6px" aria-hidden="true"><rect x="1" y="1" width="10" height="10" fill="none" stroke="#D4D4D4" stroke-width="1.5"></rect></svg><span style="font-weight: 600">Scheduled maintenance</span></div>
+</div>
+<div id="change-feed" style="display: flex; flex-direction: column; gap: 14px">
+<h3 style="margin: 0; font-size: 24px; font-weight: 300">change feed</h3>
+<div style="display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 16px"><span style="font-size: 22px; font-weight: 300; line-height: 1.1; color: #9D9D9D">1043</span><span><span style="font-weight: 600">mark wrote 2 changes</span> <span style="color: #9D9D9D">12 minutes ago</span></span></div>
+<div style="display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 16px"><span style="font-size: 22px; font-weight: 300; line-height: 1.1; color: #9D9D9D">1039</span><span><span style="font-weight: 600">hr-sync wrote 48 changes</span> <span style="color: #9D9D9D">1 hour ago</span></span></div>
+<div style="display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 16px"><span style="font-size: 22px; font-weight: 300; line-height: 1.1; color: #9D9D9D">1031</span><span><span style="font-weight: 600">dana wrote a version of a namespace</span> <span style="color: #9D9D9D">2 days ago</span></span></div>
+<div style="display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 16px"><span style="font-size: 22px; font-weight: 300; line-height: 1.1; color: #9D9D9D">1029</span><span><span style="font-weight: 600">mark wrote 1 change</span> <span style="color: #9D9D9D">3 days ago</span></span></div>
+</div>
+</div>
+<div style="flex: 0 0 280px; margin-left: auto; min-width: 0; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<h3 style="margin: 0 0 10px; font-size: 24px; font-weight: 300">you</h3>
+<span style="font-weight: 600">Mark Lauter</span>
+<span style="color: #9D9D9D">Access administrator</span>
+<span style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 13px; color: #9D9D9D">…2d5e1b0a9f43</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0 0 4px; font-size: 24px; font-weight: 300">recent</h3>
+<span style="display: flex; flex-direction: column"><span style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 14px">group:eng#member</span><span style="color: #9D9D9D; font-size: 13px">pinned · changed by you</span></span>
+<span style="display: flex; flex-direction: column"><span style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 14px">folder:root#viewer</span><span style="color: #9D9D9D; font-size: 13px">pinned · changed by you</span></span>
+<span style="display: flex; flex-direction: column"><span style="font-size: 14px">bob</span><span style="color: #9D9D9D; font-size: 13px">person · viewed yesterday</span></span>
+<span style="display: flex; flex-direction: column"><span style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 14px">file</span><span style="color: #9D9D9D; font-size: 13px">namespace · viewed 3 days ago</span></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0 0 4px; font-size: 24px; font-weight: 300">saved views</h3>
+<span style="display: flex; flex-direction: column"><span>Who can view the specs folder</span><span style="color: #9D9D9D; font-size: 13px">3 people · as of revision 1039</span></span>
+<span style="display: flex; flex-direction: column"><span>Everything bob can reach</span><span style="color: #9D9D9D; font-size: 13px">4 relationships · as of revision 1012</span></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0 0 4px; font-size: 24px; font-weight: 300">help</h3>
+<span>How relationships become access</span>
+<span>A worked example: files, folders and groups</span>
+<span>Writing a namespace</span>
+<span>Glossary</span>
+</div>
+</div>
+</div>
+</section>
+<section aria-label="alerts" style="flex: 0 0 1120px; box-sizing: border-box; padding: 40px 96px 64px 64px; overflow-y: auto; min-height: 0; display: flex; flex-direction: column; gap: 40px">
+<h2 style="margin: 0; font-size: 101px; font-weight: 300; line-height: 1; letter-spacing: -0.03em">alerts</h2>
+<div style="display: flex; gap: 28px; font-size: 18px; font-weight: 300">
+<span style="font-weight: 600">open 3</span>
+<span style="color: #9D9D9D">reviewed</span>
+<span style="color: #9D9D9D">all</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 36px; max-width: 760px">
+<div style="display: grid; grid-template-columns: 17px minmax(0, 1fr); align-items: center; gap: 4px 16px">
+<svg width="17" height="17" viewBox="0 0 16 16" style="flex: 0 0 auto" aria-hidden="true"><path d="M8 1.5L13.5 3.5V8C13.5 11 11 13.25 8 14.5C5 13.25 2.5 11 2.5 8V3.5Z" fill="none" stroke="#E5322D" stroke-width="1.5" stroke-linejoin="round"></path><path d="M8 5V9" stroke="#E5322D" stroke-width="1.5" stroke-linecap="round"></path><circle cx="8" cy="11.3" r="0.9" fill="#E5322D"></circle></svg>
+<span style="font-size: 20px; font-weight: 600">svc-reports added itself to group:admins#member</span>
+<span></span>
+<span>A writer granted its own identity a relationship. Writers rarely need to do that.</span>
+<span></span>
+<span style="color: #9D9D9D">serious · revision 1041 · 40 minutes ago</span>
+<span></span>
+<span style="display: flex; gap: 24px; padding-top: 4px"><span style="text-decoration: underline; text-underline-offset: 3px">review the write</span><span style="text-decoration: underline; text-underline-offset: 3px">stage its removal</span><span style="color: #9D9D9D; text-decoration: underline; text-underline-offset: 3px">mark reviewed</span></span>
+</div>
+<div style="display: grid; grid-template-columns: 17px minmax(0, 1fr); align-items: center; gap: 4px 16px">
+<svg width="17" height="17" viewBox="0 0 16 16" style="flex: 0 0 auto" aria-hidden="true"><path d="M8 1.5L13.5 3.5V8C13.5 11 11 13.25 8 14.5C5 13.25 2.5 11 2.5 8V3.5Z" fill="none" stroke="#E5322D" stroke-width="1.5" stroke-linejoin="round"></path><path d="M8 5V9" stroke="#E5322D" stroke-width="1.5" stroke-linecap="round"></path><circle cx="8" cy="11.3" r="0.9" fill="#E5322D"></circle></svg>
+<span style="font-size: 20px; font-weight: 600">An unusually large grant to a sensitive group</span>
+<span></span>
+<span>hr-sync added 212 people to <span style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 14px">group:finance#member</span> in one write, at 03:12. Its writes usually change a handful.</span>
+<span></span>
+<span style="color: #9D9D9D">serious · revision 1036 · today, 03:12</span>
+<span></span>
+<span style="display: flex; gap: 24px; padding-top: 4px"><span style="text-decoration: underline; text-underline-offset: 3px">review the write</span><span style="color: #9D9D9D; text-decoration: underline; text-underline-offset: 3px">mark reviewed</span></span>
+</div>
+<div style="display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: 4px 16px">
+<svg width="12" height="12" viewBox="0 0 12 12" style="margin-top: 8px" aria-hidden="true"><rect x="1" y="1" width="10" height="10" fill="none" stroke="#D4D4D4" stroke-width="1.5"></rect></svg>
+<span style="font-size: 20px; font-weight: 600">One client asked about 9,400 resources for one person</span>
+<span></span>
+<span>Most answers were no. That pattern looks like someone mapping what an account can reach.</span>
+<span></span>
+<span style="color: #9D9D9D">notice · client [CLIENT ID] · yesterday</span>
+<span></span>
+<span style="display: flex; gap: 24px; padding-top: 4px"><span style="text-decoration: underline; text-underline-offset: 3px">see the checks</span><span style="color: #9D9D9D; text-decoration: underline; text-underline-offset: 3px">mark reviewed</span></span>
+</div>
+</div>
+</section>
+<section aria-label="graph" style="flex: 0 0 1120px; box-sizing: border-box; padding: 40px 96px 64px 64px; overflow-y: auto; min-height: 0; display: flex; flex-direction: column; gap: 40px">
+<h2 style="margin: 0; font-size: 101px; font-weight: 300; line-height: 1; letter-spacing: -0.03em">graph</h2>
+<div style="display: flex; flex-direction: column; max-width: 440px"><span style="color: #9D9D9D">subjectset</span><span style="min-height: 40px; display: flex; align-items: center; border-bottom: 1px solid #9D9D9D; font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 18px">group:eng#member</span></div>
+<div style="display: flex; gap: 72px">
+<div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0 0 6px; font-size: 24px; font-weight: 300">subjects <span style="font-size: 15px; color: #9D9D9D">33, read at 1043</span></h3>
+<span style="display: flex; align-items: center; gap: 12px"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="0.75" y="0.75" width="10.5" height="10.5" fill="none" stroke="#9D9D9D" stroke-width="1.5" stroke-dasharray="2.5 2"></rect></svg><span style="font-weight: 600">frank</span><span style="color: #9D9D9D">staged to add</span></span>
+<span style="padding-left: 24px">alice <span style="color: #9D9D9D">· 1001</span></span>
+<span style="display: flex; align-items: center; gap: 12px"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="0.75" y="0.75" width="10.5" height="10.5" fill="none" stroke="#9D9D9D" stroke-width="1.5" stroke-dasharray="2.5 2"></rect></svg><span style="font-weight: 600; text-decoration: line-through">bob</span><span style="color: #9D9D9D">staged to retire</span></span>
+<span style="padding-left: 24px">grace <span style="color: #9D9D9D">· 1039</span></span>
+<span style="padding-left: 24px; font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 14px">group:platform#member <span style="font-family: 'Segoe UI', 'Open Sans', sans-serif; font-size: 15px; color: #9D9D9D">· 1020</span></span>
+</div>
+<div style="flex: 0 0 300px; display: flex; flex-direction: column; gap: 14px">
+<h3 style="margin: 0; font-size: 24px; font-weight: 300; display: flex; align-items: baseline; gap: 12px"><span style="font-size: 48px; line-height: 1; color: #F2C200">2</span> pending changes</h3>
+<span><span style="font-weight: 600">add</span> frank</span>
+<span><span style="font-weight: 600">retire</span> bob</span>
+<span style="align-self: flex-start; min-height: 44px; display: inline-flex; align-items: center; padding: 0 20px; background: #D4D4D4; color: #1E1E1E; font-weight: 600">write 2 changes</span>
+</div>
+</div>
+</section>
+<section aria-label="evaluate" style="flex: 0 0 1120px; box-sizing: border-box; padding: 40px 96px 64px 64px; overflow-y: auto; min-height: 0; display: flex; flex-direction: column; gap: 40px">
+<h2 style="margin: 0; font-size: 101px; font-weight: 300; line-height: 1; letter-spacing: -0.03em">evaluate</h2>
+<div style="display: flex; gap: 32px; align-items: flex-end">
+<div style="display: flex; flex-direction: column; flex: 0 0 300px"><span style="color: #9D9D9D">subjectset</span><span style="min-height: 40px; display: flex; align-items: center; border-bottom: 1px solid #9D9D9D; font-size: 16px; font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace">file:design.md#viewer</span></div>
+<div style="display: flex; flex-direction: column; flex: 0 0 200px"><span style="color: #9D9D9D">subject, to check one</span><span style="min-height: 40px; display: flex; align-items: center; border-bottom: 1px solid #9D9D9D; font-size: 16px">alice</span></div>
+<div style="display: flex; flex-direction: column; flex: 0 0 150px"><span style="color: #9D9D9D">at least revision</span><span style="min-height: 40px; display: flex; align-items: center; border-bottom: 1px solid #9D9D9D; font-size: 16px; color: #9D9D9D">any recent</span></div>
+<span style="min-height: 44px; display: inline-flex; align-items: center; padding: 0 20px; background: #D4D4D4; color: #1E1E1E; font-weight: 600">evaluate</span>
+</div>
+<div style="display: flex; gap: 64px; align-items: flex-start">
+<div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<h3 style="margin: 0; font-size: 24px; font-weight: 300">check alice</h3>
+<span style="font-size: 40px; font-weight: 300; line-height: 1.2">alice<span style="padding: 0 14px">∈</span><span style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 28px">file:design.md#viewer</span></span>
+<span style="color: #9D9D9D">allowed at revision 1043, because</span>
+<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px">
+<li style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 14px">alice<span style="font-family: 'Segoe UI', 'Open Sans', sans-serif; font-size: 1.15em; padding: 0 6px">∈</span>group:eng#member</li>
+<li style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 14px">group:eng#member<span style="font-family: 'Segoe UI', 'Open Sans', sans-serif; font-size: 1.15em; padding: 0 6px">⊆</span>folder:root#viewer</li>
+<li style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 14px">folder:root<span style="font-family: 'Segoe UI', 'Open Sans', sans-serif; font-size: 1.15em; padding: 0 6px">∈</span>folder:specs#parent</li>
+<li style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 14px">folder:specs<span style="font-family: 'Segoe UI', 'Open Sans', sans-serif; font-size: 1.15em; padding: 0 6px">∈</span>file:design.md#parent</li>
+<li style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 14px">alice<span style="font-family: 'Segoe UI', 'Open Sans', sans-serif; font-size: 1.15em; padding: 0 6px">∉</span>file:design.md#banned</li>
+<li style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 14px">alice<span style="font-family: 'Segoe UI', 'Open Sans', sans-serif; font-size: 1.15em; padding: 0 6px">∉</span>folder:specs#banned</li>
+</ol>
+</div>
+<div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<h3 style="margin: 0; font-size: 24px; font-weight: 300">expand file:design.md#viewer</h3>
+<span style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 15px">viewer = (this ∪ editor ∪ parent→viewer) ∖ banned</span>
+<span style="display: flex; align-items: baseline; gap: 14px; font-size: 24px; font-weight: 300"><span style="font-size: 64px; line-height: 1">2</span> members</span>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+<li style="display: flex; align-items: center; gap: 12px"><span role="img" aria-label="in" style="flex: 0 0 auto; width: 27px; height: 27px; box-sizing: border-box; border: 1px solid #6FA877; color: #8CC495; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-family: 'Segoe UI', 'Open Sans', sans-serif; font-size: 20px; line-height: 1; padding-bottom: 2px">∈</span><span>alice</span> <span style="color: #9D9D9D">through group:eng#member, checked</span></li>
+<li style="display: flex; align-items: center; gap: 12px"><span role="img" aria-label="in" style="flex: 0 0 auto; width: 27px; height: 27px; box-sizing: border-box; border: 1px solid #6FA877; color: #8CC495; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-family: 'Segoe UI', 'Open Sans', sans-serif; font-size: 20px; line-height: 1; padding-bottom: 2px">∈</span><span>carol</span> <span style="color: #9D9D9D">through editor, as owner</span></li>
+<li style="display: flex; align-items: center; gap: 12px"><span role="img" aria-label="not in" style="flex: 0 0 auto; width: 27px; height: 27px; box-sizing: border-box; border: 1px solid #B8645C; color: #E08A80; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-family: 'Segoe UI', 'Open Sans', sans-serif; font-size: 20px; line-height: 1; padding-bottom: 2px">∉</span><span>bob</span> <span style="color: #9D9D9D">removed by file:design.md#banned</span></li>
+<li style="display: flex; align-items: center; gap: 12px"><span role="img" aria-label="not in" style="flex: 0 0 auto; width: 27px; height: 27px; box-sizing: border-box; border: 1px solid #B8645C; color: #E08A80; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-family: 'Segoe UI', 'Open Sans', sans-serif; font-size: 20px; line-height: 1; padding-bottom: 2px">∉</span><span>erin</span> <span style="color: #9D9D9D">removed by folder:specs#banned</span></li>
+</ul>
+<div style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 14px; line-height: 1.9; padding-top: 8px">
+<div style="font-weight: 600">file:design.md#viewer</div>
+<div style="margin-left: 4px; padding-left: 24px; border-left: 1px solid #4A4A4A">
+<div>∪ editor → owner = {carol}</div>
+<div>∪ parent → folder:specs#viewer</div>
+<div style="margin-left: 4px; padding-left: 24px; border-left: 1px solid #4A4A4A">
+<div>∪ parent → folder:root#viewer</div>
+<div style="margin-left: 4px; padding-left: 24px; border-left: 1px solid #4A4A4A">this = {erin, group:eng#member} = {erin, alice, bob}</div>
+<div>∖ banned = {erin}</div>
+</div>
+<div>∖ banned = {bob}</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section aria-label="namespaces" style="flex: 0 0 1120px; box-sizing: border-box; padding: 40px 96px 64px 64px; overflow-y: auto; min-height: 0; display: flex; flex-direction: column; gap: 40px">
+<h2 style="margin: 0; font-size: 101px; font-weight: 300; line-height: 1; letter-spacing: -0.03em">namespaces</h2>
+<div style="display: flex; gap: 80px; align-items: flex-start">
+<div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="display: flex; align-items: baseline; gap: 20px"><span style="font-size: 40px; font-weight: 300; line-height: 1.1">documents</span><span style="color: #9D9D9D">theory · 2 namespaces</span></span>
+<span style="display: flex; flex-direction: column"><span style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 22px">file</span><span style="color: #9D9D9D">auditor, banned, editor, owner, parent, viewer · version 1031</span></span>
+<span style="display: flex; flex-direction: column"><span style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 22px">folder</span><span style="color: #9D9D9D">banned, owner, parent, viewer · version 1012</span></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="display: flex; align-items: baseline; gap: 20px"><span style="font-size: 40px; font-weight: 300; line-height: 1.1">not in a theory</span><span style="color: #9D9D9D">1 namespace</span></span>
+<span style="display: flex; flex-direction: column"><span style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 22px">group</span><span style="color: #9D9D9D">member · version 1004</span></span>
+</div>
+</div>
+<div style="flex: 0 0 260px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 24px; font-weight: 300">versions of <span style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 22px">file</span></span>
+<span style="display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 16px"><span style="font-size: 24px; font-weight: 300; line-height: 1.1">1031</span><span><span style="font-weight: 600">current</span> · adds auditor</span></span>
+<span style="display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 16px"><span style="font-size: 24px; font-weight: 300; line-height: 1.1; color: #9D9D9D">1020</span><span style="color: #9D9D9D">superseded at 1031</span></span>
+<span style="display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 16px"><span style="font-size: 24px; font-weight: 300; line-height: 1.1; color: #9D9D9D">1004</span><span style="color: #9D9D9D">superseded at 1020</span></span>
+</div>
+</div>
+</section>
+<section aria-label="status" style="flex: 0 0 1120px; box-sizing: border-box; padding: 40px 96px 64px 64px; overflow-y: auto; min-height: 0; display: flex; flex-direction: column; gap: 40px">
+<h2 style="margin: 0; font-size: 101px; font-weight: 300; line-height: 1; letter-spacing: -0.03em">status</h2>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<sc-for list="{{services}}" as="service" hint-placeholder-count="6">
+<div style="display: grid; grid-template-columns: 96px repeat(24, minmax(0, 1fr)); gap: 4px; align-items: center; min-height: 28px">
+<span style="font-weight: 600">{{service.name}}</span>
+<sc-for list="{{service.cells}}" as="cell" hint-placeholder-count="24">
+<span role="img" aria-label="{{cell.label}}" style="display: flex; justify-content: center">
+<sc-if value="{{cell.ok}}" hint-placeholder-val="{{ true }}"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="3" y="3" width="6" height="6" fill="#6B6B6B"></rect></svg></sc-if>
+<sc-if value="{{cell.warn}}" hint-placeholder-val="{{ false }}"><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0l6 12H0z" fill="#F2C200"></path></svg></sc-if>
+<sc-if value="{{cell.down}}" hint-placeholder-val="{{ false }}"><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><rect x="0.75" y="0.75" width="10.5" height="10.5" fill="none" stroke="#E5322D" stroke-width="1.5"></rect><path d="M3.5 3.5L8.5 8.5M8.5 3.5L3.5 8.5" stroke="#E5322D" stroke-width="1.5"></path></svg></sc-if>
+</span>
+</sc-for>
+</div>
+</sc-for>
+</div>
+<section aria-label="Identity sync" style="display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0; font-size: 24px; font-weight: 300">identity sync <span style="font-size: 15px; color: #9D9D9D">SCIM</span></h3>
+<dl style="margin: 0; display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 6px 32px">
+<dt>provider</dt><dd style="margin: 0; color: #9D9D9D">[ORG IDP]</dd>
+<dt>last push</dt><dd style="margin: 0; color: #9D9D9D">4 minutes ago</dd>
+<dt>users</dt><dd style="margin: 0; color: #9D9D9D">1,284</dd>
+<dt>groups</dt><dd style="margin: 0; color: #9D9D9D">96</dd>
+</dl>
+</section>
+</section>
+<section aria-label="metrics" style="flex: 0 0 1120px; box-sizing: border-box; padding: 40px 96px 64px 64px; overflow-y: auto; min-height: 0; display: flex; flex-direction: column; gap: 40px">
+<h2 style="margin: 0; font-size: 101px; font-weight: 300; line-height: 1; letter-spacing: -0.03em">metrics</h2>
+<section aria-label="Objectives" style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 20px">
+<h3 style="margin: 0; font-size: 24px; font-weight: 300">objectives</h3>
+<span style="color: #9D9D9D">the last 30 days</span>
+</div>
+<div style="overflow-x: auto">
+<table style="min-width: 760px; border-collapse: collapse">
+<thead>
+<tr>
+<th scope="col" style="padding: 0 32px 10px 0; font-weight: 400; color: #9D9D9D; text-align: left">objective</th><th scope="col" style="padding: 0 32px 10px 0; font-weight: 400; color: #9D9D9D; text-align: left">target</th><th scope="col" style="padding: 0 32px 10px 0; font-weight: 400; color: #9D9D9D; text-align: left">measured</th><th scope="col" style="padding: 0 32px 10px 0; font-weight: 400; color: #9D9D9D; text-align: left">error budget</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row" style="padding: 10px 32px 10px 0; vertical-align: baseline; text-align: left; font-weight: 600">Check <span style="font-weight: 400; color: #9D9D9D">availability</span></th><td style="padding: 10px 32px 10px 0; vertical-align: baseline">99.99%</td><td style="padding: 10px 32px 10px 0; vertical-align: baseline">99.996%</td><td style="padding: 10px 32px 10px 0; vertical-align: baseline"><span style="display: inline-flex; align-items: center; gap: 12px"><svg width="120" height="6" viewBox="0 0 120 6" aria-hidden="true"><rect x="0" y="2" width="120" height="2" fill="#3A3A3A"></rect><rect x="0" y="1" width="72" height="4" fill="#9D9D9D"></rect></svg><span>60% left</span></span></td>
+</tr>
+<tr>
+<th scope="row" style="padding: 10px 32px 10px 0; vertical-align: baseline; text-align: left; font-weight: 600">Check <span style="font-weight: 400; color: #9D9D9D">latency</span></th><td style="padding: 10px 32px 10px 0; vertical-align: baseline">99% within 10 ms</td><td style="padding: 10px 32px 10px 0; vertical-align: baseline">99.6%</td><td style="padding: 10px 32px 10px 0; vertical-align: baseline"><span style="display: inline-flex; align-items: center; gap: 12px"><svg width="120" height="6" viewBox="0 0 120 6" aria-hidden="true"><rect x="0" y="2" width="120" height="2" fill="#3A3A3A"></rect><rect x="0" y="1" width="70" height="4" fill="#9D9D9D"></rect></svg><span>58% left</span></span></td>
+</tr>
+<tr>
+<th scope="row" style="padding: 10px 32px 10px 0; vertical-align: baseline; text-align: left; font-weight: 600">Read <span style="font-weight: 400; color: #9D9D9D">availability</span></th><td style="padding: 10px 32px 10px 0; vertical-align: baseline">99.99%</td><td style="padding: 10px 32px 10px 0; vertical-align: baseline">99.998%</td><td style="padding: 10px 32px 10px 0; vertical-align: baseline"><span style="display: inline-flex; align-items: center; gap: 12px"><svg width="120" height="6" viewBox="0 0 120 6" aria-hidden="true"><rect x="0" y="2" width="120" height="2" fill="#3A3A3A"></rect><rect x="0" y="1" width="96" height="4" fill="#9D9D9D"></rect></svg><span>80% left</span></span></td>
+</tr>
+<tr>
+<th scope="row" style="padding: 10px 32px 10px 0; vertical-align: baseline; text-align: left; font-weight: 600">Read <span style="font-weight: 400; color: #9D9D9D">latency</span></th><td style="padding: 10px 32px 10px 0; vertical-align: baseline">99% within 30 ms</td><td style="padding: 10px 32px 10px 0; vertical-align: baseline">99.3%</td><td style="padding: 10px 32px 10px 0; vertical-align: baseline"><span style="display: inline-flex; align-items: center; gap: 12px"><svg width="120" height="6" viewBox="0 0 120 6" aria-hidden="true"><rect x="0" y="2" width="120" height="2" fill="#3A3A3A"></rect><rect x="0" y="1" width="36" height="4" fill="#9D9D9D"></rect></svg><span>30% left</span></span></td>
+</tr>
+<tr>
+<th scope="row" style="padding: 10px 32px 10px 0; vertical-align: baseline; text-align: left; font-weight: 600">Write <span style="font-weight: 400; color: #9D9D9D">availability</span></th><td style="padding: 10px 32px 10px 0; vertical-align: baseline">99.9%</td><td style="padding: 10px 32px 10px 0; vertical-align: baseline">99.907%</td><td style="padding: 10px 32px 10px 0; vertical-align: baseline"><span style="display: inline-flex; align-items: center; gap: 12px"><svg width="120" height="6" viewBox="0 0 120 6" aria-hidden="true"><rect x="0" y="2" width="120" height="2" fill="#3A3A3A"></rect><rect x="0" y="1" width="8" height="4" fill="#9D9D9D"></rect></svg><span>7% left</span><span style="display: inline-flex; align-items: center; gap: 6px; margin-left: 12px"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 0l6 12H0z" fill="#F2C200"></path></svg>at risk</span></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section aria-label="Golden signals" style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 20px">
+<h3 style="margin: 0; font-size: 24px; font-weight: 300">golden signals</h3>
+</div>
+<div style="display: flex; gap: 28px; font-size: 18px; font-weight: 300"><span style="font-weight: 600">hour</span><span style="color: #9D9D9D">day</span><span style="color: #9D9D9D">week</span></div>
+<div style="overflow-x: auto">
+<table style="min-width: 760px; border-collapse: collapse">
+<thead>
+<tr>
+<th scope="col" style="padding: 0 32px 10px 0; font-weight: 400; color: #9D9D9D; text-align: left">service</th><th scope="col" style="padding: 0 32px 10px 0; font-weight: 400; color: #9D9D9D; text-align: left">traffic</th><th scope="col" style="padding: 0 32px 10px 0; font-weight: 400; color: #9D9D9D; text-align: left">errors</th><th scope="col" style="padding: 0 32px 10px 0; font-weight: 400; color: #9D9D9D; text-align: left">latency</th><th scope="col" style="padding: 0 32px 10px 0; font-weight: 400; color: #9D9D9D; text-align: left">saturation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row" style="padding: 10px 32px 10px 0; vertical-align: baseline; text-align: left; font-weight: 600">Check</th>
+<td style="padding: 10px 32px 10px 0; vertical-align: baseline"><span style="display: flex; align-items: center; gap: 16px"><span><span style="font-size: 28px; font-weight: 300; line-height: 1.1">20,480</span><span style="display: block; color: #9D9D9D; font-size: 13px">per minute</span></span><svg width="96" height="28" viewBox="-2 0 100 28" aria-hidden="true" style="flex: 0 0 auto"><polyline points="0.0,16.1 4.2,14.1 8.3,12.6 12.5,14.0 16.7,14.0 20.9,14.3 25.0,13.4 29.2,11.8 33.4,14.1 37.6,16.8 41.7,14.9 45.9,15.3 50.1,13.8 54.3,16.6 58.4,17.0 62.6,15.7 66.8,17.2 71.0,14.7 75.1,12.4 79.3,15.1 83.5,17.8 87.7,17.6 91.8,15.0 96.0,15.7" fill="none" stroke="#9D9D9D" stroke-width="1.5" stroke-linejoin="round"></polyline><circle cx="96.0" cy="15.7" r="2.5" fill="#D4D4D4"></circle></svg></span></td>
+<td style="padding: 10px 32px 10px 0; vertical-align: baseline"><span style="display: flex; align-items: center; gap: 16px"><span><span style="font-size: 28px; font-weight: 300; line-height: 1.1">0.004%</span><span style="display: block; color: #9D9D9D; font-size: 13px">of checks</span></span><svg width="96" height="28" viewBox="-2 0 100 28" aria-hidden="true" style="flex: 0 0 auto"><polyline points="0.0,11.4 4.2,8.8 8.3,11.3 12.5,13.7 16.7,11.8 20.9,10.4 25.0,9.5 29.2,10.6 33.4,10.0 37.6,9.3 41.7,8.9 45.9,10.8 50.1,11.2 54.3,11.9 58.4,10.6 62.6,7.7 66.8,5.1 71.0,4.9 75.1,5.2 79.3,6.5 83.5,9.2 87.7,11.9 91.8,12.1 96.0,13.2" fill="none" stroke="#9D9D9D" stroke-width="1.5" stroke-linejoin="round"></polyline><circle cx="96.0" cy="13.2" r="2.5" fill="#D4D4D4"></circle></svg></span></td>
+<td style="padding: 10px 32px 10px 0; vertical-align: baseline"><span style="display: flex; align-items: center; gap: 16px"><span><span style="font-size: 28px; font-weight: 300; line-height: 1.1">2 ms</span><span style="display: block; color: #9D9D9D; font-size: 13px">p50 · 8 ms p99</span></span><svg width="96" height="28" viewBox="-2 0 100 28" aria-hidden="true" style="flex: 0 0 auto"><polyline points="0.0,15.5 4.2,15.3 8.3,16.0 12.5,15.4 16.7,14.7 20.9,17.2 25.0,20.0 29.2,18.0 33.4,19.4 37.6,21.0 41.7,18.1 45.9,18.3 50.1,16.3 54.3,16.5 58.4,15.7 62.6,17.7 66.8,16.9 71.0,14.8 75.1,14.7 79.3,13.3 83.5,12.3 87.7,14.8 91.8,13.3 96.0,12.8" fill="none" stroke="#9D9D9D" stroke-width="1.5" stroke-linejoin="round"></polyline><circle cx="96.0" cy="12.8" r="2.5" fill="#D4D4D4"></circle></svg></span></td>
+<td style="padding: 10px 32px 10px 0; vertical-align: baseline"><span style="display: flex; align-items: center; gap: 16px"><span><span style="font-size: 28px; font-weight: 300; line-height: 1.1">38%</span><span style="display: block; color: #9D9D9D; font-size: 13px">of table read capacity</span></span><svg width="96" height="28" viewBox="-2 0 100 28" aria-hidden="true" style="flex: 0 0 auto"><polyline points="0.0,15.5 4.2,17.8 8.3,18.4 12.5,20.4 16.7,22.4 20.9,22.4 25.0,20.0 29.2,18.3 33.4,16.7 37.6,18.3 41.7,18.1 45.9,19.4 50.1,21.3 54.3,22.4 58.4,22.4 62.6,19.9 66.8,18.0 71.0,16.3 75.1,14.5 79.3,16.3 83.5,17.4 87.7,16.7 91.8,15.3 96.0,13.3" fill="none" stroke="#9D9D9D" stroke-width="1.5" stroke-linejoin="round"></polyline><circle cx="96.0" cy="13.3" r="2.5" fill="#D4D4D4"></circle></svg></span></td>
+</tr>
+<tr>
+<th scope="row" style="padding: 10px 32px 10px 0; vertical-align: baseline; text-align: left; font-weight: 600">Read</th>
+<td style="padding: 10px 32px 10px 0; vertical-align: baseline"><span style="display: flex; align-items: center; gap: 16px"><span><span style="font-size: 28px; font-weight: 300; line-height: 1.1">310</span><span style="display: block; color: #9D9D9D; font-size: 13px">per minute</span></span><svg width="96" height="28" viewBox="-2 0 100 28" aria-hidden="true" style="flex: 0 0 auto"><polyline points="0.0,13.3 4.2,11.9 8.3,10.2 12.5,7.7 16.7,6.3 20.9,4.4 25.0,7.1 29.2,7.3 33.4,4.8 37.6,4.4 41.7,4.4 45.9,6.6 50.1,6.8 54.3,8.3 58.4,8.0 62.6,7.6 66.8,10.4 71.0,12.0 75.1,13.3 79.3,10.9 83.5,9.4 87.7,11.3 91.8,9.6 96.0,11.7" fill="none" stroke="#9D9D9D" stroke-width="1.5" stroke-linejoin="round"></polyline><circle cx="96.0" cy="11.7" r="2.5" fill="#D4D4D4"></circle></svg></span></td>
+<td style="padding: 10px 32px 10px 0; vertical-align: baseline"><span style="display: flex; align-items: center; gap: 16px"><span><span style="font-size: 28px; font-weight: 300; line-height: 1.1">0%</span><span style="display: block; color: #9D9D9D; font-size: 13px">of reads</span></span><svg width="96" height="28" viewBox="-2 0 100 28" aria-hidden="true" style="flex: 0 0 auto"><polyline points="0.0,12.3 4.2,10.5 8.3,10.5 12.5,11.9 16.7,14.8 20.9,13.9 25.0,14.0 29.2,12.5 33.4,13.3 37.6,11.7 41.7,13.0 45.9,11.3 50.1,10.0 54.3,10.4 58.4,10.2 62.6,9.2 66.8,10.9 71.0,10.6 75.1,8.9 79.3,10.2 83.5,8.5 87.7,7.4 91.8,5.4 96.0,6.4" fill="none" stroke="#9D9D9D" stroke-width="1.5" stroke-linejoin="round"></polyline><circle cx="96.0" cy="6.4" r="2.5" fill="#D4D4D4"></circle></svg></span></td>
+<td style="padding: 10px 32px 10px 0; vertical-align: baseline"><span style="display: flex; align-items: center; gap: 16px"><span><span style="font-size: 28px; font-weight: 300; line-height: 1.1">5 ms</span><span style="display: block; color: #9D9D9D; font-size: 13px">p50 · 24 ms p99</span></span><svg width="96" height="28" viewBox="-2 0 100 28" aria-hidden="true" style="flex: 0 0 auto"><polyline points="0.0,15.0 4.2,17.0 8.3,16.2 12.5,18.6 16.7,18.4 20.9,19.2 25.0,21.7 29.2,21.7 33.4,22.4 37.6,22.4 41.7,22.4 45.9,22.4 50.1,22.4 54.3,20.5 58.4,22.4 62.6,22.4 66.8,21.7 71.0,19.1 75.1,18.6 79.3,19.2 83.5,16.5 87.7,19.1 91.8,17.0 96.0,18.3" fill="none" stroke="#9D9D9D" stroke-width="1.5" stroke-linejoin="round"></polyline><circle cx="96.0" cy="18.3" r="2.5" fill="#D4D4D4"></circle></svg></span></td>
+<td style="padding: 10px 32px 10px 0; vertical-align: baseline"><span style="display: flex; align-items: center; gap: 16px"><span><span style="font-size: 28px; font-weight: 300; line-height: 1.1">9%</span><span style="display: block; color: #9D9D9D; font-size: 13px">of table read capacity</span></span><svg width="96" height="28" viewBox="-2 0 100 28" aria-hidden="true" style="flex: 0 0 auto"><polyline points="0.0,15.6 4.2,12.9 8.3,15.1 12.5,13.9 16.7,16.3 20.9,17.7 25.0,14.9 29.2,16.5 33.4,15.7 37.6,15.9 41.7,16.2 45.9,16.2 50.1,18.0 54.3,16.1 58.4,18.5 62.6,20.0 66.8,22.4 71.0,22.4 75.1,22.4 79.3,20.1 83.5,20.8 87.7,22.4 91.8,22.4 96.0,19.6" fill="none" stroke="#9D9D9D" stroke-width="1.5" stroke-linejoin="round"></polyline><circle cx="96.0" cy="19.6" r="2.5" fill="#D4D4D4"></circle></svg></span></td>
+</tr>
+<tr>
+<th scope="row" style="padding: 10px 32px 10px 0; vertical-align: baseline; text-align: left; font-weight: 600">Write</th>
+<td style="padding: 10px 32px 10px 0; vertical-align: baseline"><span style="display: flex; align-items: center; gap: 16px"><span><span style="font-size: 28px; font-weight: 300; line-height: 1.1">42</span><span style="display: block; color: #9D9D9D; font-size: 13px">per minute</span></span><svg width="96" height="28" viewBox="-2 0 100 28" aria-hidden="true" style="flex: 0 0 auto"><polyline points="0.0,14.2 4.2,14.9 8.3,17.0 12.5,14.9 16.7,17.8 20.9,17.7 25.0,15.4 29.2,17.9 33.4,17.5 37.6,16.9 41.7,19.5 45.9,20.2 50.1,19.0 54.3,19.3 58.4,18.0 62.6,20.0 66.8,21.5 71.0,22.4 75.1,22.4 79.3,19.9 83.5,19.4 87.7,17.8 91.8,18.5 96.0,17.1" fill="none" stroke="#9D9D9D" stroke-width="1.5" stroke-linejoin="round"></polyline><circle cx="96.0" cy="17.1" r="2.5" fill="#D4D4D4"></circle></svg></span></td>
+<td style="padding: 10px 32px 10px 0; vertical-align: baseline"><span style="display: flex; align-items: center; gap: 16px"><span><span style="font-size: 28px; font-weight: 300; line-height: 1.1">0.1%</span><span style="display: block; color: #9D9D9D; font-size: 13px">of writes</span></span><svg width="96" height="28" viewBox="-2 0 100 28" aria-hidden="true" style="flex: 0 0 auto"><polyline points="0.0,13.6 4.2,14.0 8.3,13.5 12.5,15.2 16.7,13.4 20.9,11.6 25.0,10.7 29.2,12.6 33.4,12.5 37.6,13.5 41.7,15.0 45.9,12.4 50.1,9.5 54.3,12.1 58.4,10.0 62.6,9.4 66.8,10.1 71.0,11.4 75.1,10.4 79.3,10.6 83.5,9.5 87.7,8.6 91.8,10.7 96.0,9.2" fill="none" stroke="#9D9D9D" stroke-width="1.5" stroke-linejoin="round"></polyline><circle cx="96.0" cy="9.2" r="2.5" fill="#D4D4D4"></circle></svg></span></td>
+<td style="padding: 10px 32px 10px 0; vertical-align: baseline"><span style="display: flex; align-items: center; gap: 16px"><span><span style="font-size: 28px; font-weight: 300; line-height: 1.1">21 ms</span><span style="display: block; color: #9D9D9D; font-size: 13px">p50 · 96 ms p99</span></span><svg width="96" height="28" viewBox="-2 0 100 28" aria-hidden="true" style="flex: 0 0 auto"><polyline points="0.0,14.3 4.2,13.9 8.3,11.5 12.5,11.7 16.7,11.6 20.9,11.1 25.0,13.0 29.2,12.9 33.4,12.1 37.6,10.4 41.7,12.8 45.9,13.9 50.1,16.3 54.3,14.5 58.4,13.4 62.6,16.0 66.8,13.2 71.0,3.2 75.1,9.7 79.3,9.0 83.5,11.0 87.7,13.8 91.8,13.6 96.0,16.2" fill="none" stroke="#9D9D9D" stroke-width="1.5" stroke-linejoin="round"></polyline><circle cx="96.0" cy="16.2" r="2.5" fill="#D4D4D4"></circle></svg></span></td>
+<td style="padding: 10px 32px 10px 0; vertical-align: baseline"><span style="display: flex; align-items: center; gap: 16px"><span><span style="font-size: 28px; font-weight: 300; line-height: 1.1">22%</span><span style="display: block; color: #9D9D9D; font-size: 13px">of table write capacity · 0.4% head retries</span></span><svg width="96" height="28" viewBox="-2 0 100 28" aria-hidden="true" style="flex: 0 0 auto"><polyline points="0.0,14.1 4.2,13.2 8.3,12.3 12.5,14.3 16.7,17.2 20.9,17.9 25.0,19.2 29.2,17.4 33.4,16.3 37.6,15.7 41.7,15.4 45.9,14.4 50.1,16.5 54.3,16.8 58.4,18.8 62.6,16.4 66.8,19.0 71.0,17.1 75.1,19.6 79.3,18.5 83.5,19.5 87.7,20.0 91.8,18.0 96.0,20.8" fill="none" stroke="#9D9D9D" stroke-width="1.5" stroke-linejoin="round"></polyline><circle cx="96.0" cy="20.8" r="2.5" fill="#D4D4D4"></circle></svg></span></td>
+</tr>
+<tr>
+<th scope="row" style="padding: 10px 32px 10px 0; vertical-align: baseline; text-align: left; font-weight: 600">Author</th>
+<td style="padding: 10px 32px 10px 0; vertical-align: baseline"><span style="display: flex; align-items: center; gap: 16px"><span><span style="font-size: 28px; font-weight: 300; line-height: 1.1">18</span><span style="display: block; color: #9D9D9D; font-size: 13px">per minute</span></span><svg width="96" height="28" viewBox="-2 0 100 28" aria-hidden="true" style="flex: 0 0 auto"><polyline points="0.0,15.4 4.2,14.3 8.3,13.3 12.5,11.2 16.7,13.1 20.9,14.6 25.0,16.6 29.2,18.2 33.4,16.9 37.6,19.0 41.7,18.8 45.9,20.5 50.1,21.7 54.3,22.1 58.4,20.1 62.6,19.5 66.8,22.3 71.0,22.4 75.1,22.4 79.3,20.3 83.5,18.5 87.7,16.7 91.8,14.8 96.0,13.4" fill="none" stroke="#9D9D9D" stroke-width="1.5" stroke-linejoin="round"></polyline><circle cx="96.0" cy="13.4" r="2.5" fill="#D4D4D4"></circle></svg></span></td>
+<td style="padding: 10px 32px 10px 0; vertical-align: baseline"><span style="display: flex; align-items: center; gap: 16px"><span><span style="font-size: 28px; font-weight: 300; line-height: 1.1">0%</span><span style="display: block; color: #9D9D9D; font-size: 13px">of requests</span></span><svg width="96" height="28" viewBox="-2 0 100 28" aria-hidden="true" style="flex: 0 0 auto"><polyline points="0.0,16.3 4.2,15.1 8.3,14.2 12.5,11.7 16.7,13.0 20.9,14.4 25.0,13.1 29.2,12.1 33.4,13.3 37.6,12.2 41.7,12.8 45.9,11.2 50.1,13.4 54.3,15.0 58.4,12.7 62.6,13.5 66.8,14.9 71.0,13.1 75.1,12.4 79.3,14.4 83.5,14.1 87.7,13.2 91.8,15.1 96.0,14.2" fill="none" stroke="#9D9D9D" stroke-width="1.5" stroke-linejoin="round"></polyline><circle cx="96.0" cy="14.2" r="2.5" fill="#D4D4D4"></circle></svg></span></td>
+<td style="padding: 10px 32px 10px 0; vertical-align: baseline"><span style="display: flex; align-items: center; gap: 16px"><span><span style="font-size: 28px; font-weight: 300; line-height: 1.1">80 ms</span><span style="display: block; color: #9D9D9D; font-size: 13px">p50 · 240 ms p99</span></span><svg width="96" height="28" viewBox="-2 0 100 28" aria-hidden="true" style="flex: 0 0 auto"><polyline points="0.0,11.3 4.2,14.1 8.3,12.8 12.5,14.7 16.7,11.9 20.9,14.7 25.0,12.5 29.2,11.5 33.4,9.4 37.6,6.6 41.7,8.1 45.9,9.0 50.1,7.8 54.3,9.1 58.4,10.4 62.6,12.0 66.8,9.9 71.0,7.8 75.1,6.0 79.3,7.6 83.5,5.2 87.7,5.1 91.8,6.7 96.0,6.9" fill="none" stroke="#9D9D9D" stroke-width="1.5" stroke-linejoin="round"></polyline><circle cx="96.0" cy="6.9" r="2.5" fill="#D4D4D4"></circle></svg></span></td>
+<td style="padding: 10px 32px 10px 0; vertical-align: baseline"><span style="font-size: 28px; font-weight: 300; line-height: 1.1">—</span><span style="display: block; color: #9D9D9D; font-size: 13px">no shared resource</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"stripHeight":{"editor":null},"onGo":{"editor":null},"$preview":{"width":7840,"height":1500}}'>
+class Component extends DCLogic {
+go(e, name) {
+if (this.props.onGo) {
+e?.preventDefault?.();
+this.props.onGo(name);
+}
+}
+renderVals() {
+const hours = [];
+for (let i = 0; i < 24; i++) {
+hours.push(String((15 + i) % 24).padStart(2, '0'));
+}
+const row = (name, at) => ({
+name,
+cells: hours.map((hour, i) => {
+const state = at(i);
+const word = state === 'down' ? 'down' : state === 'warn' ? 'degraded' : 'serving';
+return { ok: state === 'ok', warn: state === 'warn', down: state === 'down', label: name + ' at ' + hour + ':00, ' + word };
+}),
+});
+const always = () => 'ok';
+return {
+stripHeight: this.props.stripHeight ?? 1500,
+goMetrics: (e) => this.go(e, 'metrics'),
+goAlerts: (e) => this.go(e, 'alerts'),
+goGraph: (e) => this.go(e, 'graph'),
+goStatus: (e) => this.go(e, 'status'),
+services: [
+row('Check', (i) => (i === 12 || i === 13 ? 'warn' : 'ok')),
+row('Read', always),
+row('Write', (i) => (i === 12 ? 'down' : 'ok')),
+row('Author', always),
+row('Table', (i) => (i === 12 ? 'warn' : 'ok')),
+row('Sign-in', always),
+row('SCIM', always),
+],
+};
+}
+}
+</script>
+</body>
+</html>
