@@ -1,47 +1,65 @@
 {
   "v": 3,
-  "createdOnFiles": {
-    "v": 1,
-    "at": "2026-11-22T21:30:00Z"
+  "attachments": {},
+  "boards": {
+    "Editor.dc.html": {
+      "expand": "fill",
+      "h": 1000,
+      "is_interactive": true,
+      "title": "Namespace editor",
+      "w": 1280,
+      "x": 4490,
+      "y": 1600
+    },
+    "Panorama.dc.html": {
+      "h": 1520,
+      "is_interactive": true,
+      "title": "Panorama, window over the strip",
+      "w": 1440,
+      "x": 1360,
+      "y": -1640
+    },
+    "SignIn.dc.html": {
+      "expand": "fill",
+      "h": 800,
+      "is_interactive": true,
+      "title": "Sign in",
+      "w": 1280,
+      "x": 0,
+      "y": -1640
+    },
+    "Strip.dc.html": {
+      "h": 1500,
+      "title": "The strip",
+      "w": 7840,
+      "x": 0,
+      "y": 0
+    }
   },
-  "title": "Author Metro",
+  "createdOnFiles": {
+    "at": "2026-11-22T21:30:00Z",
+    "v": 1
+  },
+  "designSystems": [],
   "launch": {
     "view": "canvas"
   },
-  "pages": [],
-  "boards": {
-    "SignIn.dc.html": {
-      "x": 0,
-      "y": -1640,
-      "w": 1280,
-      "h": 800,
-      "title": "Sign in",
-      "expand": "fill",
-      "is_interactive": true
+  "noteOrder": [
+    "panoramaNav",
+    "evaluateLater"
+  ],
+  "notes": {
+    "evaluateLater": {
+      "text": "Later: evaluate (check and expand) becomes a sub-page of both namespaces and graph. A top-level page for now.",
+      "w": 400,
+      "x": 2880,
+      "y": -1040
     },
-    "Panorama.dc.html": {
-      "x": 1360,
-      "y": -1640,
-      "w": 1440,
-      "h": 1520,
-      "title": "Panorama, window over the strip",
-      "is_interactive": true
-    },
-    "Editor.dc.html": {
-      "x": 0,
-      "y": -720,
-      "w": 1280,
-      "h": 1000,
-      "title": "Namespace editor",
-      "expand": "fill",
-      "is_interactive": true
-    },
-    "Strip.dc.html": {
-      "x": 0,
-      "y": 0,
-      "w": 7840,
-      "h": 1500,
-      "title": "The strip"
+    "panoramaNav": {
+      "text": "Navigation: click the part of the next or previous page that shows at the window's edge, or a page name in the bar at the top. Either way the strip slides so that page moves into view; it never jumps.",
+      "w": 400,
+      "x": 2880,
+      "y": -1640
     }
   },
   "order": [
@@ -50,19 +68,6 @@
     "Editor.dc.html",
     "Strip.dc.html"
   ],
-  "notes": {
-    "panoramaNav": {
-      "x": 2880,
-      "y": -1640,
-      "w": 400,
-      "text": "Navigation: click the part of the next or previous page that shows at the window's edge, or a page name in the bar at the top. Either way the strip slides so that page moves into view; it never jumps."
-    },
-    "evaluateLater": {
-      "x": 2880,
-      "y": -1040,
-      "w": 400,
-      "text": "Later: evaluate (check and expand) becomes a sub-page of both namespaces and graph. A top-level page for now."
-    }
-  },
-  "designSystems": []
+  "pages": [],
+  "title": "Author Metro"
 }

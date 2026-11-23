@@ -42,7 +42,7 @@ a{color:#D4D4D4;text-decoration-thickness:1px;text-underline-offset:3px}a:visite
 </div>
 <div style="display: flex; flex-direction: column; gap: 16px">
 <h3 style="margin: 0; font-size: 24px; font-weight: 300"><a href="#status" onClick="{{goStatus}}" style="color: #D4D4D4; text-decoration: none">status</a></h3>
-<div style="display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: 2px 16px"><div style="display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: 2px 16px"><svg width="12" height="12" viewBox="0 0 12 12" style="margin-top: 6px" aria-hidden="true"><path d="M6 0l6 12H0z" fill="#F2C200"></path></svg><span style="font-weight: 600">Check is 12 revisions behind</span><span></span><span>Checks are answered from slightly older data until it catches up. Writes aren't affected.</span><span></span><a href="#status" style="align-self: flex-start; color: #9D9D9D" onClick="{{goStatus}}">see status</a></div>
+<div style="display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: 2px 16px"><svg width="12" height="12" viewBox="0 0 12 12" style="margin-top: 6px" aria-hidden="true"><path d="M6 0l6 12H0z" fill="#F2C200"></path></svg><span style="font-weight: 600">Check is 12 revisions behind</span><span></span><span>Checks are answered from slightly older data until it catches up. Writes aren't affected.</span><span></span><a href="#status" style="align-self: flex-start; color: #9D9D9D" onClick="{{goStatus}}">see status</a></div>
 <div style="display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: 2px 16px"><svg width="12" height="12" viewBox="0 0 12 12" style="margin-top: 6px" aria-hidden="true"><path d="M6 0l6 12H0z" fill="#F2C200"></path></svg><span style="font-weight: 600">38 relationships no longer count</span><span></span><span>The version of <span style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 14px">folder</span> written at revision 1012 dropped the relation <span style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 14px">editor</span>, so the facts under it are kept but no longer grant anything.</span><span></span><a href="#namespaces" style="align-self: flex-start; color: #9D9D9D" onClick="{{goNamespaces}}">review the 38 relationships</a></div>
 <div style="display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: 2px 16px"><svg width="12" height="12" viewBox="0 0 12 12" style="margin-top: 6px" aria-hidden="true"><rect x="1" y="1" width="10" height="10" fill="none" stroke="#D4D4D4" stroke-width="1.5"></rect></svg><span style="font-weight: 600">Scheduled maintenance</span><span></span><span>Writes pause for [DURATION] on [DATE]. Checks and reads go on.</span></div>
 </div>
@@ -387,10 +387,11 @@ a{color:#D4D4D4;text-decoration-thickness:1px;text-underline-offset:3px}a:visite
 <section aria-label="status" style="flex: 0 0 1120px; box-sizing: border-box; padding: 40px 96px 64px 64px; overflow-y: auto; min-height: 0; display: flex; flex-direction: column; gap: 40px">
 <h2 style="margin: 0; font-size: 101px; font-weight: 300; line-height: 1; letter-spacing: -0.03em">status</h2>
 <div style="display: flex; flex-direction: column; gap: 6px">
-<div style="display: grid; grid-template-columns: 96px repeat(24, minmax(0, 1fr)); gap: 4px; color: #9D9D9D; font-size: 12px; align-items: end"><span style="font-size: 15px">service</span><sc-for list="{{hours}}" as="hour" hint-placeholder-count="24"><span style="text-align: center">{{hour}}</span></sc-for></div>
+<div style="display: grid; grid-template-columns: 96px 104px repeat(24, minmax(0, 1fr)); gap: 4px; color: #9D9D9D; font-size: 12px; align-items: end"><span style="font-size: 15px">service</span><span style="font-size: 15px">version</span><sc-for list="{{hours}}" as="hour" hint-placeholder-count="24"><span style="text-align: center">{{hour}}</span></sc-for></div>
 <sc-for list="{{services}}" as="service" hint-placeholder-count="6">
-<div style="display: grid; grid-template-columns: 96px repeat(24, minmax(0, 1fr)); gap: 4px; align-items: center; min-height: 28px">
+<div style="display: grid; grid-template-columns: 96px 104px repeat(24, minmax(0, 1fr)); gap: 4px; align-items: center; min-height: 28px">
 <span style="font-weight: 600">{{service.name}}</span>
+<code style="font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace; font-size: 13px; color: #9D9D9D">{{service.version}}</code>
 <sc-for list="{{service.cells}}" as="cell" hint-placeholder-count="24">
 <span role="img" aria-label="{{cell.label}}" style="display: flex; justify-content: center">
 <sc-if value="{{cell.ok}}" hint-placeholder-val="{{ true }}"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="3" y="3" width="6" height="6" fill="#6B6B6B"></rect></svg></sc-if>
@@ -425,15 +426,6 @@ a{color:#D4D4D4;text-decoration-thickness:1px;text-underline-offset:3px}a:visite
 </li>
 </ol>
 </section>
-<aside aria-label="Deployed versions" style="flex: 1 1 240px; min-width: 0; max-width: 340px; display: flex; flex-direction: column; gap: 16px">
-<h2 style="margin: 0; font-size: 24px; font-weight: 300">deployed versions</h2>
-<dl style="margin: 0; display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 6px 32px">
-<dt>Author</dt><dd style="margin: 0; color: #9D9D9D">0.1.0</dd>
-<dt>Check</dt><dd style="margin: 0; color: #9D9D9D">0.1.0</dd>
-<dt>Read</dt><dd style="margin: 0; color: #9D9D9D">0.1.0</dd>
-<dt>Write</dt><dd style="margin: 0; color: #9D9D9D">0.1.0</dd>
-</dl>
-</aside>
 <aside aria-label="Identity sync" style="flex: 1 1 240px; min-width: 0; max-width: 340px; display: flex; flex-direction: column; gap: 16px">
 <h2 style="margin: 0; font-size: 24px; font-weight: 300">identity sync <span style="font-size: 15px; color: #9D9D9D">SCIM</span></h2>
 <dl style="margin: 0; display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 6px 32px">
@@ -540,8 +532,9 @@ const hours = [];
 for (let i = 0; i < 24; i++) {
 hours.push(String((15 + i) % 24).padStart(2, '0'));
 }
-const row = (name, at) => ({
+const row = (name, version, at) => ({
 name,
+version,
 cells: hours.map((hour, i) => {
 const state = at(i);
 const word = state === 'down' ? 'down' : state === 'warn' ? 'degraded' : 'serving';
@@ -559,13 +552,13 @@ goGraph: (e) => this.go(e, 'graph'),
 goStatus: (e) => this.go(e, 'status'),
 goNamespaces: (e) => this.go(e, 'namespaces'),
 services: [
-row('Check', (i) => (i === 12 || i === 13 ? 'warn' : 'ok')),
-row('Read', always),
-row('Write', (i) => (i === 12 ? 'down' : 'ok')),
-row('Author', always),
-row('Table', (i) => (i === 12 ? 'warn' : 'ok')),
-row('Sign-in', always),
-row('SCIM', always),
+row('Check', '0.1.0', (i) => (i === 12 || i === 13 ? 'warn' : 'ok')),
+row('Read', '0.1.0', always),
+row('Write', '0.1.0', (i) => (i === 12 ? 'down' : 'ok')),
+row('Author', '0.1.0', always),
+row('Table', 'DynamoDB', (i) => (i === 12 ? 'warn' : 'ok')),
+row('Sign-in', '[ORG IDP]', always),
+row('SCIM', '[ORG IDP]', always),
 ],
 };
 }
