@@ -77,7 +77,7 @@ super(props);
 this.state = { at: 0 };
 }
 renderVals() {
-const names = ['start', 'alerts', 'graph', 'evaluate', 'namespaces', 'status', 'metrics'];
+const names = ['start', 'alerts', 'graph', 'evaluate', 'namespaces', 'status', 'help'];
 const at = this.state.at;
 const go = (i) => () => this.setState({ at: Math.max(0, Math.min(names.length - 1, i)) });
 return {
