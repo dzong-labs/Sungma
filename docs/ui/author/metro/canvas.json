@@ -8,16 +8,40 @@
       "is_interactive": true,
       "title": "Namespace editor",
       "w": 1280,
-      "x": 4490,
-      "y": 1600
+      "x": 4536,
+      "y": -651
     },
-    "Panorama.dc.html": {
-      "h": 1520,
+    "Monitor.dc.html": {
+      "h": 1500,
       "is_interactive": true,
-      "title": "Panorama, window over the strip",
+      "title": "Monitoring strip, Segoe UI",
+      "w": 6720,
+      "x": 0,
+      "y": 3700
+    },
+    "MonitorOpenSans.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "Monitoring strip, Open Sans",
+      "w": 6720,
+      "x": 0,
+      "y": 6940
+    },
+    "MonitorPanorama.dc.html": {
+      "h": 1563,
+      "is_interactive": true,
+      "title": "Monitoring panorama, window over the strip",
       "w": 1440,
       "x": 0,
-      "y": 1670
+      "y": 1656
+    },
+    "MonitorSelawik.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "Monitoring strip, Selawik",
+      "w": 6720,
+      "x": 0,
+      "y": 5320
     },
     "SignIn.dc.html": {
       "expand": "fill",
@@ -25,15 +49,94 @@
       "is_interactive": true,
       "title": "Sign in",
       "w": 1280,
-      "x": -1361,
-      "y": 0
+      "x": -1499,
+      "y": 1656
     },
     "Strip.dc.html": {
       "h": 1500,
       "title": "The strip",
       "w": 7840,
+      "x": 46,
+      "y": -2251
+    },
+    "AuthorHub.dc.html": {
       "x": 0,
-      "y": 0
+      "y": 8980,
+      "w": 5600,
+      "h": 1500,
+      "title": "Author hub",
+      "is_interactive": true
+    },
+    "AuthorPanorama.dc.html": {
+      "x": 6880,
+      "y": 8980,
+      "w": 1440,
+      "h": 1620,
+      "title": "Author panorama, window over the hub",
+      "is_interactive": true
+    },
+    "Subjectset.dc.html": {
+      "x": 8400,
+      "y": 8980,
+      "w": 1280,
+      "h": 1100,
+      "title": "Subjectset item page",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Namespaces.dc.html": {
+      "x": 9760,
+      "y": 8980,
+      "w": 1280,
+      "h": 1000,
+      "title": "Namespaces list page",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Subjectsets.dc.html": {
+      "x": 0,
+      "y": 10700,
+      "w": 1280,
+      "h": 1000,
+      "title": "Subjectsets list page",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Subjects.dc.html": {
+      "x": 1360,
+      "y": 10700,
+      "w": 1280,
+      "h": 1000,
+      "title": "Subjects list page",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Subject.dc.html": {
+      "x": 4080,
+      "y": 10700,
+      "w": 1280,
+      "h": 1100,
+      "title": "Subject item page",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Check.dc.html": {
+      "x": 5440,
+      "y": 10700,
+      "w": 1280,
+      "h": 1100,
+      "title": "Check item page",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Namespace.dc.html": {
+      "x": 6800,
+      "y": 10700,
+      "w": 1280,
+      "h": 1100,
+      "title": "Namespace item page",
+      "expand": "fill",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -45,28 +148,43 @@
     "view": "canvas"
   },
   "noteOrder": [
-    "panoramaNav",
-    "evaluateLater"
+    "monitoringFonts",
+    "authorTitle"
   ],
   "notes": {
-    "evaluateLater": {
-      "text": "Later: evaluate (check and expand) becomes a sub-page of both namespaces and graph. A top-level page for now.",
-      "w": 400,
-      "x": 1520,
-      "y": 2270
+    "monitoringFonts": {
+      "kind": "title1",
+      "maxW": 6720,
+      "text": "Monitoring strip in three typefaces",
+      "w": 240,
+      "x": 0,
+      "y": 3420
     },
-    "panoramaNav": {
-      "text": "Navigation: click the part of the next or previous page that shows at the window's edge, or a page name in the bar at the top. Either way the strip slides so that page moves into view; it never jumps.",
-      "w": 400,
-      "x": 1520,
-      "y": 1670
+    "authorTitle": {
+      "x": 0,
+      "y": 8700,
+      "text": "Author: hub, list and item pages",
+      "kind": "title1",
+      "maxW": 11040
     }
   },
   "order": [
     "SignIn.dc.html",
-    "Panorama.dc.html",
     "Editor.dc.html",
-    "Strip.dc.html"
+    "Strip.dc.html",
+    "Monitor.dc.html",
+    "MonitorSelawik.dc.html",
+    "MonitorOpenSans.dc.html",
+    "MonitorPanorama.dc.html",
+    "AuthorHub.dc.html",
+    "AuthorPanorama.dc.html",
+    "Subjectset.dc.html",
+    "Namespaces.dc.html",
+    "Subjectsets.dc.html",
+    "Subjects.dc.html",
+    "Subject.dc.html",
+    "Check.dc.html",
+    "Namespace.dc.html"
   ],
   "pages": [],
   "title": "Author Metro"
